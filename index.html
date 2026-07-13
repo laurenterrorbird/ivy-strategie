@@ -114,8 +114,8 @@ tr:hover{background:#f5f8f5}
 <div class="section">
   <div class="num">Constat 2</div>
   <h2>CI+ : qui paie quoi aujourd'hui ?</h2>
-  <p>Voici le detail de ce qui a ete facture aux differents tarifs pour les chambres CI+ sur les deux dernieres saisons (24-25 et 25-26 combinees), compare a ce que cela aurait ete si tout le monde payait 66 €/nuit :</p>
-  <table id="t-tiers"><thead><tr><th>Tarif</th><th class="n">Reserv.</th><th class="n">Nuits</th><th class="n">Tarif reel/nuit</th><th class="n">Revenu percu</th><th class="n">A 66 €/nuit</th><th class="n">Ecart</th></tr></thead><tbody></tbody></table>
+  <p>Les tarifs CI+ varient selon le niveau de membre : 66 €/nuit pour les non-membres, 55 € pour les membres adherents et bienfaiteurs. Voici le detail des sejours factures sur les deux dernieres saisons :</p>
+  <table id="t-tiers"><thead><tr><th>Tarif</th><th class="n">Reserv.</th><th class="n">Nuits</th><th class="n">Tarif/nuit</th><th class="n">Revenu</th></tr></thead><tbody></tbody></table>
   <div class="callout amber" id="tiers-insight"></div>
 </div>
 
@@ -131,12 +131,13 @@ tr:hover{background:#f5f8f5}
 <!-- S4: Retention -->
 <div class="section">
   <div class="num">Constat 4</div>
-  <h2>58 % des visiteurs ne reviennent jamais</h2>
-  <p>C'est le coeur du probleme. Sur 3 012 personnes uniques accueillies depuis septembre 2023, la majorite ne revient pas pour un autre evenement.</p>
+  <h2>La majorite des visiteurs ne revient jamais</h2>
+  <p>Sur les 3 012 personnes accueillies depuis septembre 2023, 58 % n'ont fait qu'une seule reservation. Mais ce chiffre global masque l'evolution d'une saison a l'autre :</p>
+  <div class="kpi-row" id="s4-yoy"></div>
   <div class="g2">
     <div class="chart-box" style="height:260px"><canvas id="c-ret"></canvas></div>
     <div>
-      <table id="t-ret"><thead><tr><th>Segment</th><th class="n">Personnes</th><th class="n">Reservations</th><th class="n">Revenus</th><th class="n">Rev./pers.</th></tr></thead><tbody></tbody></table>
+      <table id="t-ret"><thead><tr><th>Segment (3 saisons)</th><th class="n">Personnes</th><th class="n">Reservations</th><th class="n">Revenus</th><th class="n">Rev./pers.</th></tr></thead><tbody></tbody></table>
       <p style="font-size:.82rem;margin-top:.5rem">Les visiteurs qui ne viennent qu'une fois generent en moyenne <strong id="v-avg1"></strong> chacun. S'ils revenaient une seule fois au meme tarif, c'est <strong id="v-double1"></strong> de revenus supplementaires.</p>
     </div>
   </div>
@@ -304,14 +305,15 @@ function upSim(){const dp=+ps.value,dn=+ns.value;
   document.getElementById('sim-vn').textContent=FE(dn*66);}
 ps.oninput=upSim;ns.oninput=upSim;upSim();
 
-// S2: CI+ tiers factual
+// S2: CI+ tiers factual — 55/night for members is correct policy
 const tiers=S.ciplusAllTiers||[];
-const totalDiff=tiers.reduce((s,r)=>s+r.difference,0);
 document.querySelector('#t-tiers tbody').innerHTML=tiers.map(r=>{
   const short=r.tier.split('/')[0].trim().replace('Membre (adhérent/soutien) ','Membre adherent').replace('Membre Bienfaiteur ','Bienfaiteur');
-  return `<tr><td>${short}</td><td class="n">${F(r.bookings)}</td><td class="n">${F(r.nights)}</td><td class="n">${FE(r.actual_rate)}</td><td class="n">${FE(r.actual_rev)}</td><td class="n">${FE(r.rev_at_66)}</td><td class="n">${r.difference>0?'+':''}${FE(r.difference)}</td></tr>`;
-}).join('')+`<tr style="font-weight:700;background:#f8f9fa"><td>Total</td><td class="n">${F(tiers.reduce((s,r)=>s+r.bookings,0))}</td><td class="n">${F(tiers.reduce((s,r)=>s+r.nights,0))}</td><td></td><td class="n">${FE(tiers.reduce((s,r)=>s+r.actual_rev,0))}</td><td class="n">${FE(tiers.reduce((s,r)=>s+r.rev_at_66,0))}</td><td class="n">${FE(totalDiff)}</td></tr>`;
-document.getElementById('tiers-insight').innerHTML=`<strong>Si tous les sejours CI+ avaient ete factures a 66 €/nuit, le centre aurait percu ${FE(totalDiff)} de plus sur les deux dernieres saisons</strong> — soit environ ${FE(Math.round(totalDiff/2))} par an. Sur un chiffre d'affaires total de 647 000 €, cela represente ${FP(totalDiff/6473.67)}.<br><br>Les emails de confirmation envoyés aux participants indiquent clairement le tarif « Membre Bienfaiteur » ou « Membre adherent/soutien » sur chaque ligne de la reservation, y compris l'hebergement. <strong>Il convient d'evaluer les avantages et inconvenients de maintenir ou supprimer cette reduction sur les chambres individuelles</strong>, en tenant compte a la fois de la politique affichee sur le site web et de l'experience vecue par les membres. Dans tous les cas, cela appelle un realignement entre le site web de l'Institut, la configuration SeminarDesk et les formulaires de reservation pour s'assurer que les regles tarifaires sont coherentes et transparentes.`;
+  return `<tr><td>${short}</td><td class="n">${F(r.bookings)}</td><td class="n">${F(r.nights)}</td><td class="n">${FE(r.actual_rate)}</td><td class="n">${FE(r.actual_rev)}</td></tr>`;
+}).join('')+`<tr style="font-weight:700;background:#f8f9fa"><td>Total</td><td class="n">${F(tiers.reduce((s,r)=>s+r.bookings,0))}</td><td class="n">${F(tiers.reduce((s,r)=>s+r.nights,0))}</td><td></td><td class="n">${FE(tiers.reduce((s,r)=>s+r.actual_rev,0))}</td></tr>`;
+const totalCIplusRev=tiers.reduce((s,r)=>s+r.actual_rev,0);
+const totalCIplusNights=tiers.reduce((s,r)=>s+r.nights,0);
+document.getElementById('tiers-insight').innerHTML=`Les chambres CI+ ont genere <strong>${FE(totalCIplusRev)}</strong> sur ${F(totalCIplusNights)} nuits payees au cours des deux dernieres saisons. Le tarif membre (55 €/nuit) et le tarif non-membre (66 €/nuit) s'appliquent conformement a la grille tarifaire. Si le Conseil envisage une hausse de ces tarifs, il est utile de noter que <strong>les membres representent la majorite des nuits CI+</strong> (${F(tiers.filter(r=>r.tier.includes('Membre')||r.tier.includes('Bienfaiteur')).reduce((s,r)=>s+r.nights,0))} nuits sur ${F(totalCIplusNights)}) — ce sont les participants les plus engages de l'Institut.`;
 
 // S3: Room occupancy
 const rooms=S.roomOccupancy||[];
@@ -324,15 +326,30 @@ DC('rooms');CX.rooms=new Chart(document.getElementById('c-rooms'),{type:'bar',da
   {label:'Nuits vides',data:rEmpty,backgroundColor:'#e9ecef'}
 ]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,scales:{x:{stacked:true}},plugins:{legend:{position:'bottom'}}}});
 
-// S4: Retention segments
-const retSegs={'1_one_timer':'1 seule fois (58 %)','2_light':'2-3 fois (21 %)','3_moderate':'4-10 fois (10 %)','4_regular':'11+ fois (11 %)'};
-document.querySelector('#t-ret tbody').innerHTML=ret.map(r=>`<tr><td>${retSegs[r.segment]||r.segment}</td><td class="n">${F(r.guests)}</td><td class="n">${F(r.bookings)}</td><td class="n">${FE(r.rev)}</td><td class="n">${FE(r.avg_rev)}</td></tr>`).join('');
-DC('ret');CX.ret=new Chart(document.getElementById('c-ret'),{type:'doughnut',data:{labels:ret.map(r=>retSegs[r.segment]),datasets:[{data:ret.map(r=>r.guests),backgroundColor:['#c62828','#f57c00','#1565c0','#2e7d32']}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:12,font:{size:11}}}}}});
+// S4: Per-season one-timer YoY
+const freq=S.frequencyRevenue||[];
+const freqSeasons=[...new Set(freq.map(r=>r.season))];
+const yoyKpis=freqSeasons.map(s=>{
+  const sRows=freq.filter(r=>r.season===s);
+  const totalP=sRows.reduce((a,r)=>a+r.guests,0);
+  const oneTimers=sRows.find(r=>r.frequency==='1 fois')||{guests:0};
+  const pct=totalP?Math.round(oneTimers.guests/totalP*100):0;
+  return {season:s,oneTimers:oneTimers.guests,total:totalP,pct};
+});
+document.getElementById('s4-yoy').innerHTML=yoyKpis.map(k=>
+  `<div class="kpi"><div class="v red">${k.pct} %</div><div class="l">${k.season} : ${F(k.oneTimers)} sur ${F(k.total)} visiteurs<br>n'ont fait qu'une seule inscription</div></div>`
+).join('');
+
+// S4: Retention segments (3-season aggregate)
+const retSegs={'1_one_timer':'1 seule fois','2_light':'2-3 fois','3_moderate':'4-10 fois','4_regular':'11+ fois'};
+document.querySelector('#t-ret tbody').innerHTML=ret.map(r=>{
+  const pct=totalG?Math.round(r.guests/totalG*100):0;
+  return `<tr><td>${retSegs[r.segment]||r.segment} (${pct} %)</td><td class="n">${F(r.guests)}</td><td class="n">${F(r.bookings)}</td><td class="n">${FE(r.rev)}</td><td class="n">${FE(r.avg_rev)}</td></tr>`;
+}).join('');
+DC('ret');CX.ret=new Chart(document.getElementById('c-ret'),{type:'doughnut',data:{labels:ret.map(r=>{const p=totalG?Math.round(r.guests/totalG*100):0;return (retSegs[r.segment]||r.segment)+' ('+p+' %)';}),datasets:[{data:ret.map(r=>r.guests),backgroundColor:['#c62828','#f57c00','#1565c0','#2e7d32']}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:12,font:{size:11}}}}}});
 document.getElementById('v-avg1').textContent=FE(oneT.avg_rev||0);
 document.getElementById('v-double1').textContent=FE(Math.round(oneT.guests*0.1*(oneT.avg_rev||155)));
 
-const freq=S.frequencyRevenue||[];
-const freqSeasons=[...new Set(freq.map(r=>r.season))];
 document.querySelector('#t-freq tbody').innerHTML=freq.map((r,i)=>{
   const si=freqSeasons.indexOf(r.season);
   return `<tr class="${si%2===0?'season-a':'season-b'}"><td>${r.season}</td><td>${r.frequency}</td><td class="n">${F(r.guests)}</td><td class="n">${F(r.bookings)}</td><td class="n">${FE(r.rev)}</td><td class="n">${FE(r.avg_pp)}</td></tr>`;
@@ -413,7 +430,7 @@ document.querySelector('#t-idmt tbody').innerHTML=idmt.map(r=>`<tr><td>${r.seaso
 // Recommendations
 document.getElementById('reco').innerHTML=[
   {badge:'quick',cls:'quick',title:'Mettre en place un email de suivi post-evenement',impact:'~17 400 €',desc:'Un email automatique apres chaque retraite : remerciement + suggestions d\'evenements. Convertir 10 % des visiteurs uniques genere plus que toute hausse de prix.'},
-  {badge:'quick',cls:'quick',title:'Aligner la politique tarifaire CI+ entre le site web, SeminarDesk et les formulaires',impact:FE(Math.round(totalDiff/2))+'/an',desc:'Le site web indique qu\'il n\'y a pas de reduction membre sur les chambres individuelles, mais SeminarDesk applique un tarif reduit. Les emails de confirmation montrent ce tarif aux participants. Evaluer les pros et les cons, puis aligner la configuration sur la politique choisie.'},
+  {badge:'strategic',cls:'strategic',title:'Evaluer la politique tarifaire CI+ avant toute hausse',impact:'Voir constat 2',desc:'Les membres representent la majorite des nuits CI+. Si le Conseil envisage une hausse, il est important de mesurer l\'impact sur la frequentation de ces participants fideles, qui sont aussi les plus engages.'},
   {badge:'medium',cls:'medium',title:'Augmenter l\'occupation Chambres a 2 et Dortoirs',impact:'~11 700 €',desc:'Remplir 10 % des nuits vides dans les hebergements les plus accessibles. Cible : evenements residentiels de 1-2 semaines.'},
   {badge:'medium',cls:'medium',title:'Renforcer les evenements a haut rendement',impact:'~16 000 €',desc:'Lamrim Gendun (735 €/pers.), Vipassana (346 €/pers.) et retraites longues qui remplissent des chambres pendant 2+ semaines.'},
   {badge:'medium',cls:'medium',title:'Reconstruire l\'inscription VY et Vajrasattva',impact:'~16 000 €',desc:'La retraite VY est passee de 37 a 6 participants. Vajrasattva de 124 a 70. Chaque participant perdu represente 200-600 € de revenus.'},
