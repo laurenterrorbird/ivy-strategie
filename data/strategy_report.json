@@ -2195,6 +2195,36 @@
  ],
  "teachersBySeason": [
   {
+   "teacher": "christian charrier",
+   "season": "25-26",
+   "participants": 525,
+   "onsite": 525,
+   "nights": 994,
+   "total_rev": 50784.9,
+   "lodg_rev": 18446.75,
+   "avg_pp": 96.73
+  },
+  {
+   "teacher": "VENERABLE GUESHE LODEN",
+   "season": "25-26",
+   "participants": 507,
+   "onsite": 507,
+   "nights": 1162,
+   "total_rev": 46787.44,
+   "lodg_rev": 17597.0,
+   "avg_pp": 92.28
+  },
+  {
+   "teacher": "christian charrier",
+   "season": "24-25",
+   "participants": 581,
+   "onsite": 555,
+   "nights": 1009,
+   "total_rev": 43748.75,
+   "lodg_rev": 15371.55,
+   "avg_pp": 75.3
+  },
+  {
    "teacher": "Moine Charles",
    "season": "25-26",
    "participants": 173,
@@ -2203,6 +2233,16 @@
    "total_rev": 43473.75,
    "lodg_rev": 22956.23,
    "avg_pp": 251.29
+  },
+  {
+   "teacher": "VENERABLE GUESHE LODEN",
+   "season": "24-25",
+   "participants": 561,
+   "onsite": 560,
+   "nights": 1142,
+   "total_rev": 39420.27,
+   "lodg_rev": 13769.8,
+   "avg_pp": 70.27
   },
   {
    "teacher": "Moine Charles",
@@ -2225,26 +2265,6 @@
    "avg_pp": 360.15
   },
   {
-   "teacher": "christian charrier",
-   "season": "24-25",
-   "participants": 299,
-   "onsite": 274,
-   "nights": 687,
-   "total_rev": 32165.55,
-   "lodg_rev": 11682.5,
-   "avg_pp": 107.58
-  },
-  {
-   "teacher": "christian charrier",
-   "season": "25-26",
-   "participants": 207,
-   "onsite": 207,
-   "nights": 590,
-   "total_rev": 28617.58,
-   "lodg_rev": 12520.55,
-   "avg_pp": 138.25
-  },
-  {
    "teacher": "Vénérable Lobsang Gendun",
    "season": "24-25",
    "participants": 158,
@@ -2265,27 +2285,27 @@
    "avg_pp": 461.39
   },
   {
-   "teacher": "VENERABLE GUESHE LODEN; YANGSI RINPOCHE",
-   "season": "24-25",
-   "participants": 120,
-   "onsite": 120,
-   "nights": 533,
-   "total_rev": 19533.41,
-   "lodg_rev": 6532.75,
-   "avg_pp": 162.78
-  },
-  {
    "teacher": "Françoise NORMAND Vénérable LHAMO",
    "season": "25-26",
-   "participants": 199,
-   "onsite": 199,
-   "nights": 334,
-   "total_rev": 18912.18,
-   "lodg_rev": 7856.8,
-   "avg_pp": 95.04
+   "participants": 220,
+   "onsite": 220,
+   "nights": 352,
+   "total_rev": 19771.8,
+   "lodg_rev": 8180.8,
+   "avg_pp": 89.87
   },
   {
-   "teacher": "VENERABLE GUESHE LODEN; YANGSI RINPOCHE",
+   "teacher": "YANGSI RINPOCHE",
+   "season": "24-25",
+   "participants": 142,
+   "onsite": 142,
+   "nights": 533,
+   "total_rev": 19635.26,
+   "lodg_rev": 6532.75,
+   "avg_pp": 138.28
+  },
+  {
+   "teacher": "YANGSI RINPOCHE",
    "season": "25-26",
    "participants": 70,
    "onsite": 70,
@@ -2293,6 +2313,16 @@
    "total_rev": 18757.39,
    "lodg_rev": 7868.35,
    "avg_pp": 267.96
+  },
+  {
+   "teacher": "Françoise NORMAND Vénérable LHAMO",
+   "season": "24-25",
+   "participants": 285,
+   "onsite": 248,
+   "nights": 432,
+   "total_rev": 17445.1,
+   "lodg_rev": 5668.5,
+   "avg_pp": 61.21
   },
   {
    "teacher": "Vénérable Robina COURTIN",
@@ -2303,26 +2333,6 @@
    "total_rev": 16999.58,
    "lodg_rev": 7131.0,
    "avg_pp": 118.88
-  },
-  {
-   "teacher": "VENERABLE GUESHE LODEN; christian charrier",
-   "season": "25-26",
-   "participants": 292,
-   "onsite": 292,
-   "nights": 355,
-   "total_rev": 15911.57,
-   "lodg_rev": 4759.9,
-   "avg_pp": 54.49
-  },
-  {
-   "teacher": "VENERABLE GUESHE LODEN; christian charrier",
-   "season": "24-25",
-   "participants": 282,
-   "onsite": 281,
-   "nights": 322,
-   "total_rev": 11583.2,
-   "lodg_rev": 3689.05,
-   "avg_pp": 41.08
   },
   {
    "teacher": "William NELSON",
@@ -2345,6 +2355,16 @@
    "avg_pp": 126.92
   },
   {
+   "teacher": "Chantal Carrerot",
+   "season": "25-26",
+   "participants": 58,
+   "onsite": 58,
+   "nights": 305,
+   "total_rev": 11052.49,
+   "lodg_rev": 4749.85,
+   "avg_pp": 190.56
+  },
+  {
    "teacher": "François Schick",
    "season": "25-26",
    "participants": 33,
@@ -2355,17 +2375,7 @@
    "avg_pp": 323.6
   },
   {
-   "teacher": "VENERABLE GUESHE LODEN; Chantal Carrerot",
-   "season": "25-26",
-   "participants": 41,
-   "onsite": 41,
-   "nights": 285,
-   "total_rev": 9894.58,
-   "lodg_rev": 4544.45,
-   "avg_pp": 241.33
-  },
-  {
-   "teacher": "VENERABLE GUESHE LODEN; Chantal Carrerot",
+   "teacher": "Chantal Carrerot",
    "season": "24-25",
    "participants": 38,
    "onsite": 38,
@@ -2385,6 +2395,16 @@
    "avg_pp": 149.17
   },
   {
+   "teacher": "Michèle anila Maviel",
+   "season": "24-25",
+   "participants": 73,
+   "onsite": 73,
+   "nights": 206,
+   "total_rev": 7453.25,
+   "lodg_rev": 3460.0,
+   "avg_pp": 102.1
+  },
+  {
    "teacher": "William NELSON",
    "season": "24-25",
    "participants": 30,
@@ -2395,7 +2415,7 @@
    "avg_pp": 219.64
   },
   {
-   "teacher": "christian charrier; Sébastien Cierco",
+   "teacher": "Sébastien Cierco",
    "season": "25-26",
    "participants": 26,
    "onsite": 26,
@@ -2403,26 +2423,6 @@
    "total_rev": 6255.75,
    "lodg_rev": 1166.3,
    "avg_pp": 240.61
-  },
-  {
-   "teacher": "Françoise NORMAND Vénérable LHAMO",
-   "season": "24-25",
-   "participants": 133,
-   "onsite": 133,
-   "nights": 91,
-   "total_rev": 6147.0,
-   "lodg_rev": 1744.35,
-   "avg_pp": 46.22
-  },
-  {
-   "teacher": "Michèle anila Maviel",
-   "season": "24-25",
-   "participants": 14,
-   "onsite": 14,
-   "nights": 189,
-   "total_rev": 6080.33,
-   "lodg_rev": 3100.0,
-   "avg_pp": 434.31
   },
   {
    "teacher": "joelle MAUREL",
@@ -2435,6 +2435,16 @@
    "avg_pp": 177.99
   },
   {
+   "teacher": "Hilary Mac Michael",
+   "season": "24-25",
+   "participants": 62,
+   "onsite": 62,
+   "nights": 117,
+   "total_rev": 5218.61,
+   "lodg_rev": 1506.95,
+   "avg_pp": 84.17
+  },
+  {
    "teacher": "Marguerite AFLALLO",
    "season": "24-25",
    "participants": 34,
@@ -2445,7 +2455,7 @@
    "avg_pp": 149.81
   },
   {
-   "teacher": "Paula Chichester; Françoise NORMAND Vénérable LHAMO",
+   "teacher": "Paula Chichester",
    "season": "24-25",
    "participants": 52,
    "onsite": 34,
@@ -2455,7 +2465,17 @@
    "avg_pp": 97.76
   },
   {
-   "teacher": "François Lecointre; Wendy Ridley",
+   "teacher": "François Lecointre",
+   "season": "25-26",
+   "participants": 38,
+   "onsite": 38,
+   "nights": 105,
+   "total_rev": 4831.68,
+   "lodg_rev": 990.73,
+   "avg_pp": 127.15
+  },
+  {
+   "teacher": "Wendy Ridley",
    "season": "25-26",
    "participants": 38,
    "onsite": 38,
@@ -2475,17 +2495,17 @@
    "avg_pp": 85.66
   },
   {
-   "teacher": "Hilary Mac Michael",
-   "season": "24-25",
-   "participants": 43,
-   "onsite": 43,
-   "nights": 86,
-   "total_rev": 4556.27,
-   "lodg_rev": 1354.2,
-   "avg_pp": 105.96
+   "teacher": "Michèle anila Maviel",
+   "season": "25-26",
+   "participants": 102,
+   "onsite": 102,
+   "nights": 76,
+   "total_rev": 4142.95,
+   "lodg_rev": 1481.3,
+   "avg_pp": 40.62
   },
   {
-   "teacher": "Françoise NORMAND Vénérable LHAMO; Vénérable Lobsang Détchèn",
+   "teacher": "Vénérable Lobsang Détchèn",
    "season": "24-25",
    "participants": 41,
    "onsite": 22,
@@ -2525,7 +2545,17 @@
    "avg_pp": 123.2
   },
   {
-   "teacher": "Isabel Frere; Michèle anila Maviel",
+   "teacher": "Mabel ODESSEY",
+   "season": "24-25",
+   "participants": 68,
+   "onsite": 68,
+   "nights": 73,
+   "total_rev": 2447.62,
+   "lodg_rev": 685.95,
+   "avg_pp": 35.99
+  },
+  {
+   "teacher": "Isabel Frere",
    "season": "25-26",
    "participants": 82,
    "onsite": 82,
@@ -2533,16 +2563,6 @@
    "total_rev": 2325.75,
    "lodg_rev": 613.7,
    "avg_pp": 28.36
-  },
-  {
-   "teacher": "VENERABLE GUESHE LODEN",
-   "season": "25-26",
-   "participants": 63,
-   "onsite": 63,
-   "nights": 31,
-   "total_rev": 2187.78,
-   "lodg_rev": 414.3,
-   "avg_pp": 34.73
   },
   {
    "teacher": "Josep Manresa Zafra",
@@ -2555,26 +2575,6 @@
    "avg_pp": 29.3
   },
   {
-   "teacher": "Michèle anila Maviel",
-   "season": "25-26",
-   "participants": 20,
-   "onsite": 20,
-   "nights": 41,
-   "total_rev": 1817.2,
-   "lodg_rev": 867.6,
-   "avg_pp": 90.86
-  },
-  {
-   "teacher": "Françoise NORMAND Vénérable LHAMO; Mabel ODESSEY",
-   "season": "24-25",
-   "participants": 40,
-   "onsite": 40,
-   "nights": 42,
-   "total_rev": 1766.33,
-   "lodg_rev": 533.2,
-   "avg_pp": 44.16
-  },
-  {
    "teacher": "Catherine Fradet Delmundo",
    "season": "24-25",
    "participants": 77,
@@ -2585,7 +2585,7 @@
    "avg_pp": 21.55
   },
   {
-   "teacher": "Isabel Frere; Michèle anila Maviel",
+   "teacher": "Isabel Frere",
    "season": "24-25",
    "participants": 59,
    "onsite": 59,
@@ -2595,14 +2595,14 @@
    "avg_pp": 23.27
   },
   {
-   "teacher": "Chantal Carrerot",
+   "teacher": "Mabel ODESSEY",
    "season": "25-26",
-   "participants": 17,
-   "onsite": 17,
-   "nights": 20,
-   "total_rev": 1157.91,
-   "lodg_rev": 205.4,
-   "avg_pp": 68.11
+   "participants": 32,
+   "onsite": 32,
+   "nights": 25,
+   "total_rev": 1140.96,
+   "lodg_rev": 346.5,
+   "avg_pp": 35.66
   },
   {
    "teacher": "Gill-Eric LEININGER",
@@ -2613,26 +2613,6 @@
    "total_rev": 951.68,
    "lodg_rev": 521.0,
    "avg_pp": 158.61
-  },
-  {
-   "teacher": "Françoise NORMAND Vénérable LHAMO; Mabel ODESSEY",
-   "season": "25-26",
-   "participants": 21,
-   "onsite": 21,
-   "nights": 18,
-   "total_rev": 859.62,
-   "lodg_rev": 324.0,
-   "avg_pp": 40.93
-  },
-  {
-   "teacher": "Françoise NORMAND Vénérable LHAMO; Mabel ODESSEY; Hilary Mac Michael",
-   "season": "24-25",
-   "participants": 19,
-   "onsite": 19,
-   "nights": 31,
-   "total_rev": 662.34,
-   "lodg_rev": 152.75,
-   "avg_pp": 34.86
   },
   {
    "teacher": "Marie Labourdette",
@@ -2665,16 +2645,6 @@
    "avg_pp": 39.34
   },
   {
-   "teacher": "Mabel ODESSEY",
-   "season": "25-26",
-   "participants": 11,
-   "onsite": 11,
-   "nights": 7,
-   "total_rev": 281.34,
-   "lodg_rev": 22.5,
-   "avg_pp": 25.58
-  },
-  {
    "teacher": "Lorena Adame",
    "season": "25-26",
    "participants": 7,
@@ -2695,7 +2665,7 @@
    "avg_pp": 19.2
   },
   {
-   "teacher": "Nicolas BRUN; VENERABLE GUESHE LODEN",
+   "teacher": "Nicolas BRUN",
    "season": "24-25",
    "participants": 121,
    "onsite": 121,
@@ -2705,17 +2675,7 @@
    "avg_pp": 1.03
   },
   {
-   "teacher": "YANGSI RINPOCHE",
-   "season": "24-25",
-   "participants": 22,
-   "onsite": 22,
-   "nights": 0,
-   "total_rev": 101.85,
-   "lodg_rev": 0.0,
-   "avg_pp": 4.63
-  },
-  {
-   "teacher": "Nicolas BRUN; VENERABLE GUESHE LODEN",
+   "teacher": "Nicolas BRUN",
    "season": "25-26",
    "participants": 41,
    "onsite": 41,
@@ -2723,16 +2683,6 @@
    "total_rev": 36.12,
    "lodg_rev": 10.0,
    "avg_pp": 0.88
-  },
-  {
-   "teacher": "Mabel ODESSEY",
-   "season": "24-25",
-   "participants": 9,
-   "onsite": 9,
-   "nights": 0,
-   "total_rev": 18.95,
-   "lodg_rev": 0.0,
-   "avg_pp": 2.11
   }
  ],
  "guestRetention": [
@@ -3910,23 +3860,23 @@
   {
    "season": "23-24",
    "new_guests": 1349,
-   "returned": 657,
-   "never_returned": 692,
-   "retention_pct": 48.7
+   "returned": 725,
+   "never_returned": 624,
+   "retention_pct": 53.7
   },
   {
    "season": "24-25",
    "new_guests": 861,
-   "returned": 200,
-   "never_returned": 661,
-   "retention_pct": 23.2
+   "returned": 282,
+   "never_returned": 579,
+   "retention_pct": 32.8
   },
   {
    "season": "25-26",
    "new_guests": 770,
-   "returned": 0,
-   "never_returned": 770,
-   "retention_pct": 0.0
+   "returned": 148,
+   "never_returned": 622,
+   "retention_pct": 19.2
   }
  ],
  "frequencyRevenue": [
@@ -4092,70 +4042,210 @@
    "bookings": 1,
    "events": 1,
    "nights": 222,
-   "rev": 13148.5
+   "rev": 13148.5,
+   "first_visit": "2023-11",
+   "last_visit": "2023-11"
   },
   {
    "name": "Emanuela DRIUSSI",
    "bookings": 3,
    "events": 1,
    "nights": 203,
-   "rev": 9316.5
+   "rev": 9316.5,
+   "first_visit": "2024-02",
+   "last_visit": "2026-03"
   },
   {
    "name": "Miriam ALSTON",
    "bookings": 13,
    "events": 11,
    "nights": 141,
-   "rev": 7968.9
+   "rev": 7968.9,
+   "first_visit": "2024-07",
+   "last_visit": "2026-10"
   },
   {
    "name": "Celine Lacarte",
    "bookings": 14,
    "events": 6,
    "nights": 287,
-   "rev": 5007.93
+   "rev": 5007.93,
+   "first_visit": "2024-03",
+   "last_visit": "2026-07"
   },
   {
    "name": "Veronique Brucker",
    "bookings": 62,
    "events": 30,
    "nights": 235,
-   "rev": 4730.45
+   "rev": 4730.45,
+   "first_visit": "2023-10",
+   "last_visit": "2026-10"
   },
   {
    "name": "Christophe Sommer",
    "bookings": 3,
    "events": 2,
    "nights": 66,
-   "rev": 4630.88
+   "rev": 4630.88,
+   "first_visit": "2024-01",
+   "last_visit": "2026-01"
   },
   {
    "name": "Olivier SYLVERE",
    "bookings": 22,
    "events": 5,
    "nights": 96,
-   "rev": 4568.27
+   "rev": 4568.27,
+   "first_visit": "2023-10",
+   "last_visit": "2026-10"
   },
   {
    "name": "PASCAL MAYER",
    "bookings": 16,
    "events": 8,
    "nights": 274,
-   "rev": 4377.28
+   "rev": 4377.28,
+   "first_visit": "2024-01",
+   "last_visit": "2026-06"
   },
   {
    "name": "Marco / Jigmé Dilasser",
    "bookings": 2,
    "events": 1,
    "nights": 433,
-   "rev": 4329.91
+   "rev": 4329.91,
+   "first_visit": "2024-11",
+   "last_visit": "2025-11"
   },
   {
    "name": "Marie-Laure BEGGIORA",
    "bookings": 49,
    "events": 17,
    "nights": 139,
-   "rev": 4121.78
+   "rev": 4121.78,
+   "first_visit": "2023-10",
+   "last_visit": "2026-08"
+  }
+ ],
+ "ciplusAllTiers": [
+  {
+   "tier": "Membre (adhérent/soutien) / Member (Basic/Support)",
+   "bookings": 46,
+   "nights": 238,
+   "actual_rev": 13074.6,
+   "rev_at_66": 15708.0,
+   "difference": 2633.4,
+   "actual_rate": 54.95
+  },
+  {
+   "tier": "Non Membre / Non Member",
+   "bookings": 38,
+   "nights": 157,
+   "actual_rev": 10362.0,
+   "rev_at_66": 10362.0,
+   "difference": 0.0,
+   "actual_rate": 66.0
+  },
+  {
+   "tier": "Membre Bienfaiteur / Member Benefactor",
+   "bookings": 9,
+   "nights": 104,
+   "actual_rev": 5720.0,
+   "rev_at_66": 6864.0,
+   "difference": 1144.0,
+   "actual_rate": 55.0
+  },
+  {
+   "tier": "Tarif général / Regular Price",
+   "bookings": 1,
+   "nights": 30,
+   "actual_rev": 1286.7,
+   "rev_at_66": 1980.0,
+   "difference": 693.3,
+   "actual_rate": 42.89
+  },
+  {
+   "tier": "Sangha ordonnée / Ordained Sangha",
+   "bookings": 2,
+   "nights": 10,
+   "actual_rev": 275.0,
+   "rev_at_66": 660.0,
+   "difference": 385.0,
+   "actual_rate": 27.5
+  },
+  {
+   "tier": "Spécial -30%",
+   "bookings": 1,
+   "nights": 5,
+   "actual_rev": 228.5,
+   "rev_at_66": 330.0,
+   "difference": 101.5,
+   "actual_rate": 45.7
+  }
+ ],
+ "vipassanaDetail": [
+  {
+   "edition": "Dec 2023",
+   "participants": 51,
+   "avg_nights": 10.0,
+   "lodg_rev": 5985.0,
+   "meal_rev": 7878.5,
+   "total_rev": 14118.5
+  },
+  {
+   "edition": "Dec 2024",
+   "participants": 69,
+   "avg_nights": 9.0,
+   "lodg_rev": 7724.65,
+   "meal_rev": 10752.47,
+   "total_rev": 20139.48
+  },
+  {
+   "edition": "Dec 2025",
+   "participants": 69,
+   "avg_nights": 11.0,
+   "lodg_rev": 13109.0,
+   "meal_rev": 15955.31,
+   "total_rev": 29878.73
+  }
+ ],
+ "vajrasattvaDetail": [
+  {
+   "season": "23-24",
+   "participants": 124,
+   "avg_nights": 4.0,
+   "lodg_rev": 5366.95,
+   "meal_rev": 9539.0,
+   "total_rev": 14920.95,
+   "avg_pp": 120.33,
+   "non_membres": 20,
+   "membres": 76,
+   "bienfaiteurs": 17
+  },
+  {
+   "season": "24-25",
+   "participants": 142,
+   "avg_nights": 3.0,
+   "lodg_rev": 6532.75,
+   "meal_rev": 11617.54,
+   "total_rev": 19635.26,
+   "avg_pp": 138.28,
+   "non_membres": 26,
+   "membres": 70,
+   "bienfaiteurs": 28
+  },
+  {
+   "season": "25-26",
+   "participants": 70,
+   "avg_nights": 7.0,
+   "lodg_rev": 7868.35,
+   "meal_rev": 10558.9,
+   "total_rev": 18757.39,
+   "avg_pp": 267.96,
+   "non_membres": 18,
+   "membres": 38,
+   "bienfaiteurs": 13
   }
  ]
 }
