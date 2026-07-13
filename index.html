@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IVY — Strategie Revenus 2026</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<style>
+:root{--green:#4a6741;--green-light:#e8f5e9;--green-dark:#2e7d32;--amber:#fff8e1;--amber-border:#f9a825;--red:#c62828;--red-light:#fce4ec;--bg:#fafafa;--text:#2c3e2c;--muted:#6c757d;--border:#dee2e6;--card:#fff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+@media print{@page{margin:1.5cm}body{font-size:11pt}.no-print{display:none!important}.section{page-break-inside:avoid}}
+
+.hero{background:linear-gradient(135deg,#3d5a35 0%,#5a7d52 100%);color:#fff;padding:3rem 2rem 2.5rem;text-align:center}
+.hero h1{font-size:2rem;font-weight:300;letter-spacing:-.02em;margin-bottom:.3rem}
+.hero .thesis{font-size:1.15rem;font-weight:600;margin-top:.5rem;opacity:.95}
+.hero .sub{font-size:.8rem;opacity:.7;margin-top:.8rem}
+.kpi-hero{display:flex;justify-content:center;gap:2rem;margin-top:1.5rem;flex-wrap:wrap}
+.kpi-hero .k{background:rgba(255,255,255,.15);border-radius:10px;padding:.8rem 1.5rem;min-width:180px;backdrop-filter:blur(4px)}
+.kpi-hero .k .v{font-size:1.8rem;font-weight:700}
+.kpi-hero .k .l{font-size:.72rem;text-transform:uppercase;letter-spacing:.5px;opacity:.8}
+
+.wrap{max-width:880px;margin:0 auto;padding:0 1.5rem}
+.section{padding:2.5rem 0;border-bottom:1px solid var(--border)}
+.section:last-child{border-bottom:none}
+.section h2{font-size:1.3rem;color:var(--green);margin-bottom:.3rem;font-weight:600}
+.section .num{font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:.2rem;font-weight:600}
+.section p{font-size:.92rem;margin:.6rem 0;color:#444}
+
+.callout{padding:1rem 1.2rem;border-radius:8px;margin:1.2rem 0;font-size:.9rem;line-height:1.6}
+.callout.green{background:var(--green-light);border-left:4px solid var(--green-dark)}
+.callout.amber{background:var(--amber);border-left:4px solid var(--amber-border)}
+.callout.red{background:var(--red-light);border-left:4px solid var(--red)}
+.callout strong{font-weight:700}
+
+.kpi-row{display:flex;gap:.8rem;margin:1rem 0;flex-wrap:wrap}
+.kpi{flex:1;min-width:130px;background:var(--card);border-radius:8px;padding:.7rem;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.kpi .v{font-size:1.4rem;font-weight:700;color:var(--green)}
+.kpi .v.red{color:var(--red)}
+.kpi .l{font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.3px;margin-top:.1rem}
+
+.chart-box{position:relative;height:280px;margin:1rem 0;background:var(--card);border-radius:8px;padding:.5rem;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0}
+@media(max-width:700px){.g2{grid-template-columns:1fr}.kpi-hero{flex-direction:column;align-items:center}}
+
+table{width:100%;border-collapse:collapse;font-size:.8rem;margin:.8rem 0}
+th,td{text-align:left;padding:.4rem .6rem;border-bottom:1px solid var(--border)}
+th{font-weight:600;color:var(--muted);font-size:.7rem;text-transform:uppercase;background:var(--bg)}
+.n{text-align:right;font-variant-numeric:tabular-nums}
+.pos{color:var(--green-dark);font-weight:600}
+.neg{color:var(--red);font-weight:600}
+tr:hover{background:#f5f8f5}
+
+.sim{background:var(--card);border-radius:10px;padding:1.2rem;box-shadow:0 1px 4px rgba(0,0,0,.08);margin:1rem 0}
+.sim label{font-size:.8rem;color:var(--muted)}
+.sim input[type=range]{width:100%;margin:.3rem 0}
+.sim-result{display:flex;gap:1rem;margin-top:.8rem}
+.sim-result>div{flex:1;padding:.6rem;border-radius:8px;text-align:center}
+.sim-result .price-box{background:var(--red-light)}
+.sim-result .occ-box{background:var(--green-light)}
+.sim-result .v{font-size:1.3rem;font-weight:700}
+.sim-result .l{font-size:.68rem;color:var(--muted)}
+
+.case{background:var(--card);border-radius:10px;padding:1.2rem;box-shadow:0 1px 4px rgba(0,0,0,.08);margin:1rem 0}
+.case h4{font-size:.9rem;color:var(--green);margin-bottom:.4rem}
+.case p{font-size:.85rem}
+
+.reco{display:grid;gap:.8rem;margin:1rem 0}
+.reco-card{background:var(--card);border-radius:10px;padding:1rem 1.2rem;box-shadow:0 1px 4px rgba(0,0,0,.08);display:flex;align-items:flex-start;gap:1rem}
+.reco-card .badge{min-width:3.5rem;text-align:center;padding:.3rem .5rem;border-radius:6px;font-size:.75rem;font-weight:700;color:#fff}
+.reco-card .badge.quick{background:var(--green-dark)}
+.reco-card .badge.medium{background:#f57f17}
+.reco-card .badge.strategic{background:#1565c0}
+.reco-card .body h4{font-size:.88rem;margin-bottom:.2rem}
+.reco-card .body p{font-size:.8rem;color:#555;margin:0}
+.reco-card .impact{font-size:1.1rem;font-weight:700;color:var(--green-dark);white-space:nowrap;margin-left:auto;align-self:center}
+
+.footer{text-align:center;padding:2rem 1rem;font-size:.72rem;color:var(--muted);border-top:1px solid var(--border);margin-top:1rem}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Institut Vajra Yogini</h1>
+  <div style="font-size:.9rem;opacity:.8">Analyse strategique des revenus — Juillet 2026</div>
+  <div class="thesis">Le levier principal pour augmenter les revenus n'est pas le prix.<br>C'est la retention.</div>
+  <div class="kpi-hero">
+    <div class="k"><div class="v" id="h-pct"></div><div class="l">des visiteurs ne reviennent jamais</div></div>
+    <div class="k"><div class="v" id="h-conv"></div><div class="l">si 10 % revenaient une 2e fois</div></div>
+    <div class="k"><div class="v" id="h-ci"></div><div class="l">gain max hausse CI+ (+10 €)</div></div>
+  </div>
+  <div class="sub">Donnees SeminarDesk (backup juillet 2026) — Hors benevoles et residents — Saisons 23-24, 24-25, 25-26</div>
+</div>
+
+<div class="wrap">
+
+<!-- SECTION 1 -->
+<div class="section" id="s1">
+  <div class="num">Constat 1</div>
+  <h2>Le probleme n'est pas le prix des chambres CI+</h2>
+  <p>Le Conseil propose d'augmenter le tarif des 4 chambres individuelles+ de 66 a 70-76 euros par nuit. Voici la realite de l'occupation de ces chambres :</p>
+  <div class="kpi-row" id="s1-kpi"></div>
+  <div class="chart-box"><canvas id="c-occ"></canvas></div>
+  <div class="sim no-print">
+    <h4 style="font-size:.85rem;margin-bottom:.5rem">Comparer les deux leviers</h4>
+    <label>Hausse du tarif par nuit : <strong id="sim-p">+4 €</strong></label>
+    <input type="range" id="sim-price" min="0" max="20" value="4" step="1">
+    <label>Nuits supplementaires remplies : <strong id="sim-n">55</strong></label>
+    <input type="range" id="sim-nights" min="0" max="500" value="55" step="5">
+    <div class="sim-result">
+      <div class="price-box"><div class="l">Gain de la hausse de prix</div><div class="v neg" id="sim-vp"></div></div>
+      <div class="occ-box"><div class="l">Gain en remplissant des nuits vides (a 66 €)</div><div class="v pos" id="sim-vn"></div></div>
+    </div>
+  </div>
+  <div class="callout green"><strong>Remplir 55 nuits supplementaires a 66 € genere autant que la hausse de +10 €.</strong> C'est l'equivalent de 2 semaines par chambre sur l'annee. L'enjeu n'est pas le prix — c'est d'amener plus de monde.</div>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section" id="s2">
+  <div class="num">Constat 2</div>
+  <h2>Une erreur de configuration coute deja de l'argent</h2>
+  <p>La politique de l'Institut stipule que <strong>les chambres individuelles ne beneficient pas de la reduction membre</strong>. Or SeminarDesk applique automatiquement 55 €/nuit aux membres et bienfaiteurs au lieu de 66 €.</p>
+  <table id="t-disc"><thead><tr><th>Tarif</th><th>Saison</th><th class="n">Nuits</th><th class="n">Percu</th><th class="n">Attendu (66 €)</th><th class="n neg">Ecart</th></tr></thead><tbody></tbody></table>
+  <div class="callout green"><strong>Corriger cette configuration dans SeminarDesk recupere <span id="v-lost"></span> immediatement.</strong> Cout de la correction : zero. C'est plus que ce que genererait une hausse de +4 € sur les CI+.<br><br>Nous recommandons neanmoins de <strong>conserver le tarif reduit a 55 € pour les Bienfaiteurs</strong>, en signe de reconnaissance envers nos donateurs les plus genereux. Seuls les Membres adherents/soutien passeraient a 66 €.</div>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section" id="s3">
+  <div class="num">Constat 3</div>
+  <h2>Ou sont les nuits vides ?</h2>
+  <p>Les chambres CI+ ne sont pas le seul levier d'hebergement. Les Chambres a 2 et les Dortoirs representent la plus grande reserve de nuits disponibles.</p>
+  <div class="chart-box" style="height:320px"><canvas id="c-rooms"></canvas></div>
+  <div class="callout green"><strong>Remplir 10 % des nuits vides en Chambre a 2 et Dortoir genere ~11 700 €</strong> — bien plus que toute hausse CI+. L'hebergement le plus accessible est celui qui a le plus de potentiel.</div>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section" id="s4">
+  <div class="num">Constat 4</div>
+  <h2>58 % des visiteurs ne reviennent jamais</h2>
+  <p>C'est le coeur du probleme. Sur 3 012 personnes uniques accueillies depuis septembre 2023, la majorite ne revient pas.</p>
+  <div class="g2">
+    <div class="chart-box" style="height:260px"><canvas id="c-ret"></canvas></div>
+    <div>
+      <table id="t-ret"><thead><tr><th>Segment</th><th class="n">Personnes</th><th class="n">Reservations</th><th class="n">Revenus</th><th class="n">Rev./pers.</th></tr></thead><tbody></tbody></table>
+      <p style="font-size:.82rem;margin-top:.5rem">Les visiteurs qui ne viennent qu'une fois generent en moyenne <strong id="v-avg1"></strong> chacun. S'ils revenaient une seule fois au meme tarif, c'est <strong id="v-double1"></strong> de revenus supplementaires.</p>
+    </div>
+  </div>
+  <h3 style="margin-top:1.2rem">Revenus par frequence de visite et par saison</h3>
+  <p style="font-size:.85rem">Chaque ligne represente le meme type de personne (selon le nombre de visites dans la saison). La colonne « Rev./pers. » montre combien rapporte en moyenne un visiteur selon son niveau d'engagement.</p>
+  <table id="t-freq"><thead><tr><th>Saison</th><th>Frequence</th><th class="n">Personnes</th><th class="n">Reservations</th><th class="n">Revenus</th><th class="n">Rev./pers.</th></tr></thead><tbody></tbody></table>
+  <div class="callout amber"><strong>Un seul email de suivi — « Merci d'etre venu, voici d'autres evenements qui pourraient vous plaire » — pourrait transformer ces chiffres.</strong> Aujourd'hui, la plupart des visiteurs repartent sans jamais entendre parler de la prochaine retraite.</div>
+</div>
+
+<!-- SECTION 5 -->
+<div class="section" id="s5">
+  <div class="num">Constat 5</div>
+  <h2>La retention se degrade</h2>
+  <p>En comparant les cohortes de nouveaux visiteurs par saison, nous constatons que le taux de retour diminue.</p>
+  <div class="chart-box" style="height:240px"><canvas id="c-rety"></canvas></div>
+  <table id="t-rety"><thead><tr><th>Premiere saison</th><th class="n">Nouveaux visiteurs</th><th class="n">Sont revenus</th><th class="n">Pas revenus</th><th class="n">Taux de retour</th></tr></thead><tbody></tbody></table>
+  <div class="callout red"><strong>La cohorte 24-25 montre un taux de retour de 23 % contre 49 % pour 23-24.</strong> Meme si la saison 25-26 n'est pas terminee, cette tendance est preoccupante. Retenir les visiteurs est le probleme le plus urgent du centre.</div>
+</div>
+
+<!-- SECTION 6 -->
+<div class="section" id="s6">
+  <div class="num">Constat 6</div>
+  <h2>Quels evenements perdent le plus de monde ?</h2>
+  <p>Certains evenements attirent un public qui ne revient jamais. Ce n'est pas forcement un echec de l'evenement — c'est une opportunite de suivi manquee.</p>
+  <table id="t-lost"><thead><tr><th>Evenement</th><th class="n">Non-revenus</th><th class="n">Total part.</th><th class="n">% perdus</th><th class="n">Leur revenu</th></tr></thead><tbody></tbody></table>
+  <div class="callout amber" id="lost-insight"></div>
+</div>
+
+<!-- SECTION 7 -->
+<div class="section" id="s7">
+  <div class="num">Constat 7</div>
+  <h2>Le pipeline des cours d'initiation</h2>
+  <p>Les cours « Initiation a la Meditation » et « Initiation au Bouddhisme » sont la porte d'entree de l'Institut. Voici ce que deviennent ces eleves :</p>
+  <div class="g2">
+    <div class="chart-box" style="height:240px"><canvas id="c-intro"></canvas></div>
+    <div>
+      <table id="t-intro"><thead><tr><th>Parcours apres initiation</th><th class="n">Personnes</th><th class="n">Revenus generes</th></tr></thead><tbody></tbody></table>
+    </div>
+  </div>
+  <h3>Nouveaux eleves vs eleves existants</h3>
+  <table id="t-intro-nr"><thead><tr><th>Saison</th><th class="n">Total eleves</th><th class="n">Nouveaux</th><th class="n">Deja venus</th><th class="n">% nouveaux</th></tr></thead><tbody></tbody></table>
+  <div class="callout green"><strong>Quand le pipeline fonctionne, il fonctionne bien</strong> — 129 personnes sont devenues des reguliers. Mais 192 ont disparu apres leur initiation. La question strategique est : pourquoi, et comment les retenir ?</div>
+</div>
+
+<!-- CASE STUDIES -->
+<div class="section" id="s8">
+  <div class="num">Etudes de cas</div>
+  <h2>La retention en action : deux histoires opposees</h2>
+
+  <div class="case" id="case-vip">
+    <h4>Vipassana : quand la retention fait tripler les revenus</h4>
+    <p>La retraite Vipassana de decembre est un exemple de croissance organique par la retention :</p>
+    <table id="t-vip"><thead><tr><th>Edition</th><th class="n">Participants</th><th class="n">1ere fois</th><th class="n">Deja venus</th><th class="n">Revenus</th></tr></thead><tbody></tbody></table>
+    <p>Le nombre de « deja venus » passe de <strong>17 a 33</strong> en trois ans. Les revenus passent de <strong id="v-vip1"></strong> a <strong id="v-vip3"></strong>. Personne n'a augmente le prix — c'est la communaute qui a grandi.</p>
+  </div>
+
+  <div class="case" id="case-maurel">
+    <h4>Joelle Maurel : la porte d'entree qui ne convertit pas</h4>
+    <p><strong id="v-mau-n"></strong> personnes sont venues a IVY pour la premiere fois grace a un stage de Joelle Maurel. Combien sont revenues pour un autre evenement ?</p>
+    <div class="kpi-row">
+      <div class="kpi"><div class="v red" id="v-mau-ret"></div><div class="l">sont revenues</div></div>
+      <div class="kpi"><div class="v red" id="v-mau-pct"></div><div class="l">taux de conversion</div></div>
+      <div class="kpi"><div class="v" id="v-mau-rev"></div><div class="l">revenus subsequents</div></div>
+    </div>
+    <p>C'est une fuite massive dans l'entonnoir. Maurel remplit la salle (50+ personnes par stage), mais <strong>l'Institut ne capte presque aucun de ces visiteurs ensuite</strong>. Un seul email de suivi a ces <span id="v-mau-n2"></span> personnes pourrait tout changer.</p>
+  </div>
+
+  <div class="case" id="case-nelson">
+    <h4>William Nelson : la fidelite par l'enseignant</h4>
+    <p>28 personnes ont participe au stage Nelson en ete 2024. L'annee suivante :</p>
+    <div class="kpi-row">
+      <div class="kpi"><div class="v pos" id="v-nel-ret"></div><div class="l">sont revenues pour Nelson 2025</div></div>
+      <div class="kpi"><div class="v pos" id="v-nel-pct"></div><div class="l">taux de retour</div></div>
+      <div class="kpi"><div class="v" id="v-nel-new"></div><div class="l">nouveaux en 2025</div></div>
+    </div>
+    <p>Un taux de retour de <strong>64 %</strong> contre 35 % en moyenne pour le centre. Certains enseignants construisent une communaute fidele — c'est ce modele qu'il faut reproduire.</p>
+  </div>
+
+  <div class="case" id="case-vajra">
+    <h4>Vajrasattva : quand le nombre de participants baisse</h4>
+    <table id="t-vajra"><thead><tr><th>Saison</th><th class="n">Participants sur place</th><th class="n">Revenus</th><th class="n">Rev./pers.</th></tr></thead><tbody></tbody></table>
+    <p>De 124 a 70 participants : le revenu par personne a double (de <strong id="v-vaj1"></strong> a <strong id="v-vaj3"></strong>), car les gens restent plus longtemps. Mais le centre a perdu 50 participants — et la hausse du rev./pers. ne compense pas la perte de volume. <strong>Le recrutement reste le premier levier.</strong></p>
+  </div>
+</div>
+
+<!-- SECTION 9 -->
+<div class="section" id="s9">
+  <div class="num">Constat 8</div>
+  <h2>Les revenus en ligne : 6 % du total</h2>
+  <div class="g2">
+    <div>
+      <table id="t-online"><thead><tr><th>Type</th><th class="n">Inscriptions</th><th class="n">Personnes</th><th class="n">Revenus</th><th class="n">€/inscr.</th></tr></thead><tbody></tbody></table>
+    </div>
+    <div>
+      <h4 style="font-size:.85rem">IDMT : les memes personnes chaque semaine</h4>
+      <table id="t-idmt"><thead><tr><th>Saison</th><th class="n">Inscriptions</th><th class="n">Personnes</th><th class="n">Revenus</th></tr></thead><tbody></tbody></table>
+      <p style="font-size:.82rem;margin-top:.4rem">Les 3 000+ inscriptions IDMT representent en realite <strong>~130-150 personnes</strong> qui participent chaque semaine.</p>
+    </div>
+  </div>
+  <div class="callout amber"><strong>Question strategique :</strong> Les revenus en ligne (40 000 €) representent 6 % du total. L'effort technique et humain pour maintenir le streaming est-il justifie par le rendement financier, ou le maintient-on pour la mission d'accessibilite de l'Institut ?</div>
+</div>
+
+<!-- RECOMMENDATIONS -->
+<div class="section" id="s10">
+  <div class="num">Plan d'action</div>
+  <h2>Recommandations classees par impact</h2>
+  <div class="reco" id="reco"></div>
+</div>
+
+</div>
+
+<div class="footer">
+  Donnees : SeminarDesk backup du 7 juillet 2026 — Hors benevoles et residents<br>
+  Institut Vajra Yogini — Rapport prepare pour le Conseil d'Administration et la Direction
+</div>
+
+<script>
+const F=n=>n.toLocaleString('fr-FR',{maximumFractionDigits:0});
+const FE=n=>F(n)+' €';
+const FP=n=>n.toFixed(1)+' %';
+let CX={};
+function DC(id){if(CX[id]){CX[id].destroy();delete CX[id];}}
+
+fetch('data/strategy_report.json').then(r=>r.json()).then(S=>{
+
+// --- Hero KPIs ---
+const ret=S.guestRetention||[];
+const oneT=ret.find(r=>r.segment==='1_one_timer')||{guests:0};
+const totalG=ret.reduce((s,r)=>s+r.guests,0);
+const ci25=S.ciOccupancy.find(r=>r.seg==='CI+'&&r.season==='25-26')||{paid_nights:0};
+const pN=ci25.paid_nights||0;
+document.getElementById('h-pct').textContent=Math.round(oneT.guests/totalG*100)+'%';
+document.getElementById('h-conv').textContent=FE(Math.round(oneT.guests*0.1*155));
+document.getElementById('h-ci').textContent=FE(pN*10);
+
+// --- Section 1: CI+ ---
+const ci24=S.ciOccupancy.find(r=>r.seg==='CI+'&&r.season==='24-25')||{paid_nights:0,free_nights:0};
+const emptyN=1460-pN-(ci25.free_nights||0);
+document.getElementById('s1-kpi').innerHTML=[
+  {l:'Occupation payee 25-26',v:FP(pN/1460*100)},{l:'Nuits payees',v:F(pN)},
+  {l:'Nuits vides',v:F(emptyN)},{l:'Nuits gratuites (enseignants)',v:F(ci25.free_nights||0)}
+].map(c=>`<div class="kpi"><div class="v">${c.v}</div><div class="l">${c.l}</div></div>`).join('');
+
+const seasons=['24-25','25-26'];
+const paidD=seasons.map(s=>{const r=S.ciOccupancy.find(x=>x.seg==='CI+'&&x.season===s);return r?r.paid_nights:0;});
+const freeD=seasons.map(s=>{const r=S.ciOccupancy.find(x=>x.seg==='CI+'&&x.season===s);return r?r.free_nights:0;});
+DC('occ');CX.occ=new Chart(document.getElementById('c-occ'),{type:'bar',data:{labels:seasons,datasets:[
+  {label:'Nuits payees',data:paidD,backgroundColor:'#4a6741'},
+  {label:'Enseignants/intervenants',data:freeD,backgroundColor:'#90caf9'},
+  {label:'Nuits vides',data:seasons.map((_,i)=>1460-paidD[i]-freeD[i]),backgroundColor:'#e9ecef'}
+]},options:{responsive:true,maintainAspectRatio:false,scales:{x:{stacked:true},y:{stacked:true,max:1460,title:{display:true,text:'4 chambres x 365 nuits'}}},plugins:{legend:{position:'bottom'}}}});
+
+const ps=document.getElementById('sim-price'),ns=document.getElementById('sim-nights');
+function upSim(){const dp=+ps.value,dn=+ns.value;
+  document.getElementById('sim-p').textContent='+'+dp+' €';
+  document.getElementById('sim-n').textContent=F(dn);
+  document.getElementById('sim-vp').textContent=FE(pN*dp);
+  document.getElementById('sim-vn').textContent=FE(dn*66);}
+ps.oninput=upSim;ns.oninput=upSim;upSim();
+
+// --- Section 2: Config error ---
+const disc=S.ciplusDiscountImpact||[];
+const lost=disc.reduce((s,r)=>s+r.lost_rev,0);
+document.querySelector('#t-disc tbody').innerHTML=disc.map(r=>`<tr><td>${r.tier.split('/')[0].trim()}</td><td>${r.season||'—'}</td><td class="n">${F(r.nights)}</td><td class="n">${FE(r.actual_rev)}</td><td class="n">${FE(r.should_be_rev)}</td><td class="n neg">${FE(r.lost_rev)}</td></tr>`).join('')
+  +`<tr style="font-weight:700;background:#f8f9fa"><td colspan="2">Total</td><td class="n">${F(disc.reduce((s,r)=>s+r.nights,0))}</td><td class="n">${FE(disc.reduce((s,r)=>s+r.actual_rev,0))}</td><td class="n">${FE(disc.reduce((s,r)=>s+r.should_be_rev,0))}</td><td class="n neg">${FE(lost)}</td></tr>`;
+document.getElementById('v-lost').textContent=FE(lost);
+
+// --- Section 3: Room occupancy ---
+const rooms=S.roomOccupancy||[];
+const roomCap={'Dortoir':8760,'Chambre à 2 pers.':6570,'Chambre à 3 ou 4 pers.':5840,'Chambre individuelle':730,'Chambre individuelle +':1460,'Camping':2000,'Camping-car':1000,'Caravane':500};
+const rTypes=['Dortoir','Chambre à 2 pers.','Chambre à 3 ou 4 pers.','Chambre individuelle +','Chambre individuelle','Camping'];
+const rFilled=rTypes.map(t=>{const rs=rooms.filter(r=>r.room_type===t);return rs.reduce((s,r)=>s+r.nights,0);});
+const rEmpty=rTypes.map((t,i)=>(roomCap[t]||5000)-rFilled[i]);
+DC('rooms');CX.rooms=new Chart(document.getElementById('c-rooms'),{type:'bar',data:{labels:rTypes.map(t=>t.replace('Chambre ','Ch. ').replace('individuelle','indiv.').replace('pers.','p.')),datasets:[
+  {label:'Nuits reservees (24-25 + 25-26)',data:rFilled,backgroundColor:'#4a6741'},
+  {label:'Nuits vides',data:rEmpty,backgroundColor:'#e9ecef'}
+]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,scales:{x:{stacked:true}},plugins:{legend:{position:'bottom'}}}});
+
+// --- Section 4: Retention ---
+const retSegs={'1_one_timer':'1 seule fois (58 %)','2_light':'2-3 fois (21 %)','3_moderate':'4-10 fois (10 %)','4_regular':'11+ fois (11 %)'};
+document.querySelector('#t-ret tbody').innerHTML=ret.map(r=>`<tr><td>${retSegs[r.segment]||r.segment}</td><td class="n">${F(r.guests)}</td><td class="n">${F(r.bookings)}</td><td class="n">${FE(r.rev)}</td><td class="n">${FE(r.avg_rev)}</td></tr>`).join('');
+DC('ret');CX.ret=new Chart(document.getElementById('c-ret'),{type:'doughnut',data:{labels:ret.map(r=>retSegs[r.segment]),datasets:[{data:ret.map(r=>r.guests),backgroundColor:['#c62828','#f57c00','#1565c0','#2e7d32']}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:12,font:{size:11}}}}}});
+document.getElementById('v-avg1').textContent=FE(oneT.avg_rev||0);
+document.getElementById('v-double1').textContent=FE(Math.round(oneT.guests*0.1*(oneT.avg_rev||155)));
+
+const freq=S.frequencyRevenue||[];
+document.querySelector('#t-freq tbody').innerHTML=freq.map(r=>`<tr><td>${r.season}</td><td>${r.frequency}</td><td class="n">${F(r.guests)}</td><td class="n">${F(r.bookings)}</td><td class="n">${FE(r.rev)}</td><td class="n">${FE(r.avg_pp)}</td></tr>`).join('');
+
+// --- Section 5: Retention YoY ---
+const ry=S.retentionYoY||[];
+const ryFiltered=ry.filter(r=>r.season&&r.season!=='25-26');
+document.querySelector('#t-rety tbody').innerHTML=ry.map(r=>`<tr><td>${r.season}</td><td class="n">${F(r.new_guests)}</td><td class="n pos">${F(r.returned)}</td><td class="n neg">${F(r.never_returned)}</td><td class="n ${r.retention_pct>40?'pos':'neg'}">${FP(r.retention_pct)}</td></tr>`).join('');
+DC('rety');CX.rety=new Chart(document.getElementById('c-rety'),{type:'bar',data:{labels:ry.map(r=>r.season),datasets:[
+  {label:'Sont revenus',data:ry.map(r=>r.returned),backgroundColor:'#2e7d32'},
+  {label:'Pas revenus',data:ry.map(r=>r.never_returned),backgroundColor:'#ef9a9a'}
+]},options:{responsive:true,maintainAspectRatio:false,scales:{x:{stacked:true},y:{stacked:true}},plugins:{legend:{position:'bottom'},tooltip:{callbacks:{label(c){return c.dataset.label+': '+F(c.raw);}}}}}});
+
+// --- Section 6: Non-returner events ---
+const nre=(S.nonReturnerEvents||[]).slice(0,12);
+document.querySelector('#t-lost tbody').innerHTML=nre.map(r=>`<tr><td>${r.event.replace('[obsolète] ','')}</td><td class="n neg">${F(r.non_returners)}</td><td class="n">${F(r.total_guests)}</td><td class="n">${FP(r.pct_lost)}</td><td class="n">${FE(r.their_rev)}</td></tr>`).join('');
+const imLost=nre.find(r=>r.event.includes('Initiation'));
+document.getElementById('lost-insight').innerHTML=imLost?`<strong>${F(imLost.non_returners)} personnes ont assiste a une ${imLost.event.replace('[obsolète] ','')} et ne sont jamais revenues.</strong> C'etait ${FP(imLost.pct_lost)} des participants. Ils ont depense ${FE(imLost.their_rev)} une seule fois — s'ils revenaient ne serait-ce qu'une fois, c'est autant de revenus supplementaires.`:'';
+
+// --- Section 7: Intro pipeline ---
+const introSegs={'0_never_returned':'Jamais revenu','1_returned_1_2':'Revenu 1-2 fois','2_returned_3_5':'Revenu 3-5 fois','3_returned_6plus':'Devenu regulier (6+)'};
+const intro=S.introPipeline||[];
+document.querySelector('#t-intro tbody').innerHTML=intro.map(r=>`<tr><td>${introSegs[r.segment]||r.segment}</td><td class="n">${F(r.guests)}</td><td class="n">${FE(r.subsequent_rev)}</td></tr>`).join('');
+DC('intro');CX.intro=new Chart(document.getElementById('c-intro'),{type:'pie',data:{labels:intro.map(r=>introSegs[r.segment]),datasets:[{data:intro.map(r=>r.guests),backgroundColor:['#c62828','#f57c00','#1565c0','#2e7d32']}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:12,font:{size:11}}}}}});
+const inr=S.introNewVsReturning||[];
+document.querySelector('#t-intro-nr tbody').innerHTML=inr.map(r=>`<tr><td>${r.season}</td><td class="n">${F(r.total)}</td><td class="n">${F(r.new_students)}</td><td class="n">${F(r.returning)}</td><td class="n">${FP(r.total?r.new_students/r.total*100:0)}</td></tr>`).join('');
+
+// --- Case studies ---
+const vip=S.caseVipassana||[];
+document.querySelector('#t-vip tbody').innerHTML=vip.map(r=>`<tr><td>${r.edition}</td><td class="n">${F(r.total)}</td><td class="n">${F(r.first_timers)}</td><td class="n pos">${F(r.repeaters)}</td><td class="n">${FE(r.rev)}</td></tr>`).join('');
+if(vip.length>=3){document.getElementById('v-vip1').textContent=FE(vip[0].rev);document.getElementById('v-vip3').textContent=FE(vip[2].rev);}
+
+const mau=(S.caseMaurel||[])[0]||{};
+document.getElementById('v-mau-n').textContent=F(mau.total_first_timers||0);
+document.getElementById('v-mau-ret').textContent=F(mau.returned||0);
+document.getElementById('v-mau-pct').textContent=FP(mau.pct||0);
+document.getElementById('v-mau-rev').textContent=FE(mau.subsequent_rev||0);
+document.getElementById('v-mau-n2').textContent=F(mau.total_first_timers||0);
+
+const nel=(S.caseNelson||[])[0]||{};
+document.getElementById('v-nel-ret').textContent=F(nel.returned_2425||0);
+document.getElementById('v-nel-pct').textContent='64 %';
+document.getElementById('v-nel-new').textContent=F(nel.new_2425||0);
+
+const vaj=S.caseVajrasattva||[];
+document.querySelector('#t-vajra tbody').innerHTML=vaj.map(r=>`<tr><td>${r.season}</td><td class="n">${F(r.participants)}</td><td class="n">${FE(r.rev)}</td><td class="n">${FE(r.avg_pp)}</td></tr>`).join('');
+if(vaj.length>=3){document.getElementById('v-vaj1').textContent=FE(vaj[0].avg_pp);document.getElementById('v-vaj3').textContent=FE(vaj[2].avg_pp);}
+
+// --- Online ---
+const onl=S.onlineRevenue||[];
+document.querySelector('#t-online tbody').innerHTML=onl.map(r=>`<tr><td>${r.attendance} (${r.season})</td><td class="n">${F(r.inscriptions)}</td><td class="n">${F(r.unique_guests)}</td><td class="n">${FE(r.total_rev)}</td><td class="n">${FE(r.inscriptions?r.total_rev/r.inscriptions:0)}</td></tr>`).join('');
+const idmt=S.idmt||[];
+document.querySelector('#t-idmt tbody').innerHTML=idmt.map(r=>`<tr><td>${r.season}</td><td class="n">${F(r.inscriptions)}</td><td class="n">${F(r.unique_ppl)}</td><td class="n">${FE(r.rev)}</td></tr>`).join('');
+
+// --- Recommendations ---
+document.getElementById('reco').innerHTML=[
+  {badge:'quick',cls:'quick',title:'Corriger la configuration SeminarDesk CI+',impact:FE(lost),desc:`Appliquer 66 €/nuit pour les Membres adherents (conserver 55 € pour les Bienfaiteurs). Gain immediat, aucun cout.`},
+  {badge:'quick',cls:'quick',title:'Mettre en place un email de suivi post-evenement',impact:'~17 400 €',desc:`Un email automatique apres chaque retraite : remerciement + suggestions d'evenements. Convertir 10 % des visiteurs uniques genere plus que toute hausse de prix.`},
+  {badge:'medium',cls:'medium',title:'Augmenter l\'occupation Chambres a 2 et Dortoirs',impact:'~11 700 €',desc:`Remplir 10 % des nuits vides dans les hebergements les plus accessibles. Cible : evenements residentiels de 1-2 semaines.`},
+  {badge:'medium',cls:'medium',title:'Renforcer les evenements a haut rendement',impact:'~16 000 €',desc:`Lamrim Gendun (735 €/pers.), Vipassana (346 €/pers.) et retraites longues qui remplissent des chambres pendant 2+ semaines.`},
+  {badge:'medium',cls:'medium',title:'Reconstruire l\'inscription VY et Vajrasattva',impact:'~16 000 €',desc:`La retraite VY est passee de 37 a 6 participants. Vajrasattva de 124 a 70. Chaque participant perdu = ~200-600 € de revenus.`},
+  {badge:'medium',cls:'medium',title:'Ameliorer le suivi post-initiation',impact:'~6 000 €',desc:`39 % des eleves d'initiation ne reviennent jamais. Creer un parcours de bienvenue avec suggestions personnalisees.`},
+  {badge:'strategic',cls:'strategic',title:'Reproduire le modele Nelson/Vipassana',impact:'Long terme',desc:`64 % de retour pour Nelson, revenus x3 en 3 ans pour Vipassana. Identifier les enseignants qui construisent une communaute fidele et programmer davantage de leurs evenements.`},
+  {badge:'strategic',cls:'strategic',title:'Clarifier la strategie en ligne',impact:'~40 000 €/an',desc:`6 % du chiffre d'affaires. Evaluer si l'effort est justifie par la mission d'accessibilite ou s'il faut recentrer les ressources.`}
+].map(r=>`<div class="reco-card"><div class="badge ${r.cls}">${r.badge==='quick'?'Rapide':r.badge==='medium'?'Moyen terme':'Strategique'}</div><div class="body"><h4>${r.title}</h4><p>${r.desc}</p></div><div class="impact">${r.impact}</div></div>`).join('');
+
+});
+</script>
+</body>
+</html>
