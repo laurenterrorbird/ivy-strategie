@@ -132,7 +132,7 @@ tr:hover{background:#f5f8f5}
 <div class="section">
   <div class="num">Constat 4</div>
   <h2>La majorite des visiteurs ne revient jamais</h2>
-  <p>Sur les 3 012 personnes accueillies depuis septembre 2023, 58 % n'ont fait qu'une seule reservation. Mais ce chiffre global masque l'evolution d'une saison a l'autre :</p>
+  <p>En ne regardant que la <strong>programmation bouddhiste</strong> (hors stages non-bouddhistes, celebrations, sejours personnels et IDMT), voici combien de personnes n'ont fait qu'une seule reservation. Le chiffre global masque l'evolution d'une saison a l'autre :</p>
   <div class="kpi-row" id="s4-yoy"></div>
   <div class="g2">
     <div class="chart-box" style="height:260px"><canvas id="c-ret"></canvas></div>
@@ -151,19 +151,39 @@ tr:hover{background:#f5f8f5}
 <div class="section">
   <div class="num">Constat 5</div>
   <h2>La retention se degrade</h2>
-  <p>En comparant les cohortes de nouveaux visiteurs par saison, nous constatons que de moins en moins de personnes reviennent essayer un autre evenement.</p>
+  <p>En comparant les cohortes de nouveaux visiteurs de la programmation bouddhiste par saison, nous constatons que de moins en moins de personnes reviennent essayer un autre evenement.</p>
   <div class="chart-box" style="height:240px"><canvas id="c-rety"></canvas></div>
   <table id="t-rety"><thead><tr><th>Premiere saison</th><th class="n">Nouveaux visiteurs</th><th class="n">Ont essaye un autre evenement</th><th class="n">N'ont rien essaye d'autre</th><th class="n">Taux de retour</th></tr></thead><tbody></tbody></table>
   <div class="callout red" id="rety-insight"></div>
 </div>
 
-<!-- S6: Non-returner events -->
+<!-- S6: Buddhist one-timers deep-dive -->
 <div class="section">
   <div class="num">Constat 6</div>
-  <h2>Quels evenements perdent le plus de monde ?</h2>
-  <p>Certains evenements attirent un public qui ne revient jamais. Ce n'est pas forcement un echec de l'evenement — c'est une opportunite de suivi manquee.</p>
-  <table id="t-lost"><thead><tr><th>Evenement</th><th class="n">Non-revenus</th><th class="n">Total part.</th><th class="n">% perdus</th><th class="n">Leur revenu</th></tr></thead><tbody></tbody></table>
-  <div class="callout amber" id="lost-insight"></div>
+  <h2>Qui sont les gens qui ne reviennent pas ?</h2>
+  <p>En excluant les stages non-bouddhistes (Maurel, Nelson, Qi Gong, yoga, etc.), les celebrations et les sejours personnels, voici le profil des personnes venues pour la <strong>programmation bouddhiste</strong> qui n'ont jamais fait d'autre reservation :</p>
+
+  <div class="kpi-row" id="s6-kpi"></div>
+
+  <h3>Par saison</h3>
+  <table id="t-bot-season"><thead><tr>
+    <th>Saison</th><th class="n">Total visiteurs bouddhistes</th><th class="n">Non-revenus</th><th class="n">Taux de perte</th>
+    <th class="n">Ont dormi</th><th class="n">Jour seul</th><th class="n">En ligne</th><th class="n">Revenus perdus</th>
+  </tr></thead><tbody></tbody></table>
+
+  <h3>Duree de sejour des non-revenus (par saison)</h3>
+  <p style="font-size:.85rem">Meme des personnes restees une semaine ou plus ne reviennent pas.</p>
+  <table id="t-bot-stay"><thead><tr>
+    <th>Saison</th><th>Sejour</th><th class="n">Personnes</th><th class="n">Revenus</th><th class="n">Moy./pers.</th>
+  </tr></thead><tbody></tbody></table>
+
+  <h3>Pour quelle programmation sont-ils venus ?</h3>
+  <p style="font-size:.85rem">Top 15 des evenements bouddhistes qui attirent des gens qui ne reviennent jamais :</p>
+  <table id="t-bot-events"><thead><tr>
+    <th>Evenement</th><th class="n">Non-revenus</th><th class="n">Ont dormi</th><th class="n">Revenus</th><th class="n">Moy./pers.</th>
+  </tr></thead><tbody></tbody></table>
+
+  <div class="callout red" id="bot-insight"></div>
 </div>
 
 <!-- S7: Intro pipeline -->
@@ -367,11 +387,43 @@ const ry1=ry.find(r=>r.season==='24-25')||{retention_pct:0};
 const ry2=ry.find(r=>r.season==='25-26')||{retention_pct:0};
 document.getElementById('rety-insight').innerHTML=`<strong>Parmi les nouveaux visiteurs, ${FP(ry0.retention_pct)} de ceux de 23-24 ont essaye un autre evenement, contre ${FP(ry1.retention_pct)} pour ceux de 24-25.</strong> La saison 25-26 affiche ${FP(ry2.retention_pct)} mais elle n'est pas terminee (*). Cette tendance a la baisse est preoccupante.`;
 
-// S6: Non-returner events
-const nre=(S.nonReturnerEvents||[]).slice(0,12);
-document.querySelector('#t-lost tbody').innerHTML=nre.map(r=>`<tr><td>${r.event.replace('[obsolète] ','')}</td><td class="n neg">${F(r.non_returners)}</td><td class="n">${F(r.total_guests)}</td><td class="n">${FP(r.pct_lost)}</td><td class="n">${FE(r.their_rev)}</td></tr>`).join('');
-const imLost=nre.find(r=>r.event.includes('Initiation'));
-document.getElementById('lost-insight').innerHTML=imLost?`<strong>${F(imLost.non_returners)} personnes ont assiste a une ${imLost.event.replace('[obsolète] ','')} et ne sont jamais revenues.</strong> Ils representaient ${FP(imLost.pct_lost)} des participants de cet evenement. Ils ont depense ${FE(imLost.their_rev)} une seule fois — s'ils revenaient ne serait-ce qu'une fois, c'est autant de revenus supplementaires.`:'';
+// S6: Buddhist one-timers deep-dive
+const botS=S.buddhistOneTimersBySeason||[];
+const botTotalOT=botS.reduce((s,r)=>s+r.one_timers,0);
+const botTotalRev=botS.reduce((s,r)=>s+r.rev,0);
+const botTotalGuests=botS.reduce((s,r)=>s+r.total_guests,0);
+document.getElementById('s6-kpi').innerHTML=[
+  {l:'Personnes uniques (programmation bouddhiste)',v:F(botTotalOT)},
+  {l:'Revenus generes (une seule fois)',v:FE(botTotalRev),red:true},
+  {l:'Taux de perte moyen',v:botTotalGuests?Math.round(botTotalOT/botTotalGuests*100)+' %':'—',red:true}
+].map(c=>`<div class="kpi"><div class="v${c.red?' red':''}">${c.v}</div><div class="l">${c.l}</div></div>`).join('');
+
+document.querySelector('#t-bot-season tbody').innerHTML=botS.map((r,i)=>{
+  const pct=r.total_guests?Math.round(r.one_timers/r.total_guests*100):0;
+  return `<tr class="${i%2===0?'season-a':''}"><td>${r.season}</td><td class="n">${F(r.total_guests)}</td><td class="n neg">${F(r.one_timers)}</td><td class="n neg">${pct} %</td><td class="n">${F(r.stayed)}</td><td class="n">${F(r.day_only)}</td><td class="n">${F(r.online)}</td><td class="n">${FE(r.rev)}</td></tr>`;
+}).join('');
+
+const stayLabels={'0_jour':'Pas de nuit','1_court':'1-2 nuits','2_moyen':'3-7 nuits','3_long':'8+ nuits'};
+const botStay=S.buddhistOneTimersStay||[];
+const staySeasons=[...new Set(botStay.map(r=>r.season))];
+document.querySelector('#t-bot-stay tbody').innerHTML=botStay.map((r,i)=>{
+  const si=staySeasons.indexOf(r.season);
+  return `<tr class="${si%2===0?'season-a':''}"><td>${r.season}</td><td>${stayLabels[r.stay]||r.stay}</td><td class="n">${F(r.people)}</td><td class="n">${FE(r.rev)}</td><td class="n">${FE(r.avg_pp)}</td></tr>`;
+}).join('');
+
+const botEv=(S.buddhistOneTimersByEvent||[]).slice(0,15);
+document.querySelector('#t-bot-events tbody').innerHTML=botEv.map(r=>
+  `<tr><td>${r.event.replace('[obsolète] ','')}</td><td class="n neg">${F(r.one_timers)}</td><td class="n">${F(r.stayed)}</td><td class="n">${FE(r.rev)}</td><td class="n">${FE(r.avg_pp)}</td></tr>`
+).join('');
+
+const nn=botEv.find(r=>r.event.includes('108'));
+const im=botEv.find(r=>r.event.includes('Initiation'));
+document.getElementById('bot-insight').innerHTML=`<strong>Constats cles :</strong><ul style="margin:.5rem 0 0 1rem;font-size:.85rem">
+  ${nn?`<li><strong>${F(nn.one_timers)} personnes</strong> sont venues pour la retraite de 108 Nyoung-Nes, ont genere ${FE(nn.rev)} (${FE(nn.avg_pp)}/pers.) et ne sont jamais revenues. Ce ne sont pas des curieux — elles ont dormi sur place et participe a une pratique intensive.</li>`:''}
+  ${im?`<li><strong>${F(im.one_timers)} personnes</strong> sont venues pour une Initiation a la Meditation et ont disparu. A ${FE(im.avg_pp)} en moyenne, si elles revenaient une seule fois, c'est ${FE(Math.round(im.one_timers*im.avg_pp))} de revenus supplementaires.</li>`:''}
+  <li>Le taux de perte est passe de <strong>${botS[0]?Math.round(botS[0].one_timers/botS[0].total_guests*100):0} %</strong> en 23-24 a <strong>${botS[2]?Math.round(botS[2].one_timers/botS[2].total_guests*100):0} %</strong> en 25-26. Nous perdons plus de monde chaque annee.</li>
+  <li>Les revenus « perdus » augmentent aussi : de ${botS[0]?FE(botS[0].rev):'—'} a ${botS[2]?FE(botS[2].rev):'—'} par saison.</li>
+</ul>`;
 
 // S7: Intro pipeline
 const introSegs={'0_never_returned':'Jamais revenu','1_returned_1_2':'Revenu 1-2 fois','2_returned_3_5':'Revenu 3-5 fois','3_returned_6plus':'Devenu regulier (6+)'};
