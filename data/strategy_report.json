@@ -5225,5 +5225,71 @@
    "returned": 2,
    "subsequent_rev": 84.21
   }
+ ],
+ "guestRetentionBySeason": [
+  {
+   "season": "23-24",
+   "segment": "1_one_timer",
+   "guests": 301,
+   "bookings": 301,
+   "rev": 48668.5,
+   "avg_rev": 161.69
+  },
+  {
+   "season": "23-24",
+   "segment": "2_light",
+   "guests": 212,
+   "bookings": 512,
+   "rev": 93654.17,
+   "avg_rev": 441.76
+  },
+  {
+   "season": "23-24",
+   "segment": "3_moderate",
+   "guests": 170,
+   "bookings": 1001,
+   "rev": 106626.14,
+   "avg_rev": 627.21
+  },
+  {
+   "season": "23-24",
+   "segment": "4_regular",
+   "guests": 95,
+   "bookings": 2037,
+   "rev": 121673.2,
+   "avg_rev": 1280.77
+  },
+  {
+   "season": "24-25",
+   "segment": "1_one_timer",
+   "guests": 389,
+   "bookings": 389,
+   "rev": 53938.14,
+   "avg_rev": 138.66
+  },
+  {
+   "season": "24-25",
+   "segment": "2_light",
+   "guests": 170,
+   "bookings": 392,
+   "rev": 55637.96,
+   "avg_rev": 327.28
+  },
+  {
+   "season": "24-25",
+   "segment": "3_moderate",
+   "guests": 60,
+   "bookings": 336,
+   "rev": 37509.06,
+   "avg_rev": 625.15
+  },
+  {
+   "season": "24-25",
+   "segment": "4_regular",
+   "guests": 13,
+   "bookings": 188,
+   "rev": 15882.19,
+   "avg_rev": 1221.71
+  }
  ]
 }

@@ -76,8 +76,8 @@ tr:hover{background:#f5f8f5}
   <div style="font-size:.9rem;opacity:.8">Analyse strategique des revenus — Juillet 2026</div>
   <div class="thesis">Le levier principal pour augmenter les revenus n'est pas le prix.<br>C'est la retention.</div>
   <div class="kpi-hero">
-    <div class="k"><div class="v" id="h-pct"></div><div class="l">des visiteurs ne reviennent jamais</div></div>
-    <div class="k"><div class="v" id="h-conv"></div><div class="l">si 10 % revenaient une 2e fois</div></div>
+    <div class="k"><div class="v" id="h-pct1"></div><div class="l" id="h-lbl1"></div></div>
+    <div class="k"><div class="v" id="h-pct2"></div><div class="l" id="h-lbl2"></div></div>
     <div class="k"><div class="v" id="h-ci"></div><div class="l">gain max hausse CI+ (+10 €)</div></div>
   </div>
   <div class="sub">Donnees SeminarDesk (backup juillet 2026) — Hors benevoles et residents — Saisons 23-24, 24-25, 25-26</div>
@@ -132,15 +132,8 @@ tr:hover{background:#f5f8f5}
 <div class="section">
   <div class="num">Constat 4</div>
   <h2>La majorite des visiteurs ne revient jamais</h2>
-  <p>En ne regardant que la <strong>programmation bouddhiste</strong> (hors stages non-bouddhistes, celebrations, sejours personnels et IDMT), et en ne comptant que les <strong>personnes venues pour la premiere fois en 23-24 ou 24-25</strong> (ceux de 25-26 n'ont pas encore eu le temps de revenir) :</p>
-  <div class="kpi-row" id="s4-yoy"></div>
-  <div class="g2">
-    <div class="chart-box" style="height:260px"><canvas id="c-ret"></canvas></div>
-    <div>
-      <table id="t-ret"><thead><tr><th>Segment (3 saisons)</th><th class="n">Personnes</th><th class="n">Reservations</th><th class="n">Revenus</th><th class="n">Rev./pers.</th></tr></thead><tbody></tbody></table>
-      <p style="font-size:.82rem;margin-top:.5rem">Les visiteurs qui ne viennent qu'une fois generent en moyenne <strong id="v-avg1"></strong> chacun. S'ils revenaient une seule fois au meme tarif, c'est <strong id="v-double1"></strong> de revenus supplementaires.</p>
-    </div>
-  </div>
+  <p>Programmation bouddhiste uniquement. Seules les personnes venues pour la premiere fois en <strong>23-24</strong> ou <strong>24-25</strong> sont comptees (ceux de 25-26 n'ont pas encore eu le temps de revenir).</p>
+  <div class="g2" id="s4-seasons"></div>
   <h3 style="margin-top:1.2rem">Revenus par frequence de visite et par saison</h3>
   <p style="font-size:.85rem">La colonne « Rev./pers. » montre combien rapporte en moyenne un visiteur selon son niveau d'engagement.</p>
   <table id="t-freq"><thead><tr><th>Saison</th><th>Frequence</th><th class="n">Personnes</th><th class="n">Reservations</th><th class="n">Revenus</th><th class="n">Rev./pers.</th></tr></thead><tbody></tbody></table>
@@ -223,17 +216,6 @@ tr:hover{background:#f5f8f5}
   </div>
 
   <div class="case">
-    <h4>Joelle Maurel : la porte d'entree qui ne convertit pas</h4>
-    <p><strong id="v-mau-n"></strong> personnes uniques sont venues a IVY pour la premiere fois grace a un stage de Joelle Maurel. Combien sont revenues pour un autre evenement ?</p>
-    <div class="kpi-row">
-      <div class="kpi"><div class="v red" id="v-mau-ret"></div><div class="l">sont revenues</div></div>
-      <div class="kpi"><div class="v red" id="v-mau-pct"></div><div class="l">taux de conversion</div></div>
-      <div class="kpi"><div class="v" id="v-mau-rev"></div><div class="l">revenus subsequents</div></div>
-    </div>
-    <p>C'est une fuite massive dans l'entonnoir. Maurel remplit la salle (50+ personnes par stage), mais <strong>l'Institut ne capte presque aucun de ces visiteurs ensuite</strong>. Un seul email de suivi a ces <span id="v-mau-n2"></span> personnes pourrait tout changer.</p>
-  </div>
-
-  <div class="case">
     <h4>Vajrasattva : moitie moins de participants, mais un revenu similaire — pourquoi ?</h4>
     <table id="t-vajra"><thead><tr><th>Saison</th><th class="n">Sur place</th><th class="n">Duree moy.</th><th class="n">Hebergement</th><th class="n">Repas</th><th class="n">Total</th><th class="n">Rev./pers.</th></tr></thead><tbody></tbody></table>
     <p id="vajra-explain"></p>
@@ -244,17 +226,6 @@ tr:hover{background:#f5f8f5}
     <p>Chaque regulier a commence comme un visiteur de passage. Voici les 10 personnes ayant genere le plus de revenus depuis septembre 2023 (hors IDMT, benevoles, residents) :</p>
     <table id="t-top"><thead><tr><th>Nom</th><th class="n">Reserv.</th><th class="n">Evenements</th><th class="n">Nuits</th><th class="n">Revenus</th></tr></thead><tbody></tbody></table>
     <p id="top-explain"></p>
-  </div>
-
-  <div class="case">
-    <h4>William Nelson : la fidelite par l'enseignant</h4>
-    <p>28 personnes ont participe au stage Nelson en ete 2024. L'annee suivante :</p>
-    <div class="kpi-row">
-      <div class="kpi"><div class="v pos" id="v-nel-ret"></div><div class="l">sont revenues pour Nelson 2025</div></div>
-      <div class="kpi"><div class="v pos" id="v-nel-pct"></div><div class="l">taux de retour</div></div>
-      <div class="kpi"><div class="v" id="v-nel-new"></div><div class="l">nouveaux en 2025</div></div>
-    </div>
-    <p>Un taux de retour de <strong>64 %</strong> contre ~30 % en moyenne pour le centre. Certains enseignants construisent une communaute fidele — c'est ce modele qu'il faut reproduire.</p>
   </div>
 
   <div class="case">
@@ -315,9 +286,18 @@ const totalG=ret.reduce((s,r)=>s+r.guests,0);
 const ci25=(S.ciOccupancy||[]).find(r=>r.seg==='CI+'&&r.season==='25-26')||{paid_nights:0,free_nights:0,rev:0};
 const pN=ci25.paid_nights||0;
 
-// Hero
-document.getElementById('h-pct').textContent=Math.round(oneT.guests/totalG*100)+'%';
-document.getElementById('h-conv').textContent=FE(Math.round(oneT.guests*0.1*(oneT.avg_rev||155)));
+// Hero — per-season
+const retBS=S.guestRetentionBySeason||[];
+const hero2324=retBS.filter(r=>r.season==='23-24');
+const hero2425=retBS.filter(r=>r.season==='24-25');
+const h1Total=hero2324.reduce((s,r)=>s+r.guests,0);
+const h1OT=(hero2324.find(r=>r.segment==='1_one_timer')||{guests:0}).guests;
+const h2Total=hero2425.reduce((s,r)=>s+r.guests,0);
+const h2OT=(hero2425.find(r=>r.segment==='1_one_timer')||{guests:0}).guests;
+document.getElementById('h-pct1').textContent=h1Total?Math.round(h1OT/h1Total*100)+'%':'—';
+document.getElementById('h-lbl1').textContent='23-24 : '+F(h1OT)+' sur '+F(h1Total)+' ne reviennent pas';
+document.getElementById('h-pct2').textContent=h2Total?Math.round(h2OT/h2Total*100)+'%':'—';
+document.getElementById('h-lbl2').textContent='24-25 : '+F(h2OT)+' sur '+F(h2Total)+' ne reviennent pas';
 document.getElementById('h-ci').textContent=FE(pN*10);
 
 // S1: CI+
@@ -368,34 +348,28 @@ document.querySelector('#t-rooms tbody').innerHTML=sortedRooms.map((r,i)=>{
   return `<tr class="${si%2===0?'season-a':''}"><td>${r.room_type}</td><td>${r.season}</td><td class="n">${F(r.beds)}</td><td class="n">${F(r.capacity)}</td><td class="n">${F(r.nights)}</td><td class="n ${occCls}">${FP(r.occupancy_pct)}</td><td class="n">${FE(r.lodg_rev)}</td><td class="n">${FE(r.avg_night)}</td></tr>`;
 }).join('');
 
-// S4: Per-season one-timer YoY
+// S4: Per-season retention blocks
+const retSegs={'1_one_timer':'1 seule fois','2_light':'2-3 fois','3_moderate':'4-10 fois','4_regular':'11+ fois'};
+const retSeasons=['23-24','24-25'];
+let s4Html='';
+retSeasons.forEach(season=>{
+  const sRows=retBS.filter(r=>r.season===season);
+  const sTotal=sRows.reduce((s,r)=>s+r.guests,0);
+  const sOT=(sRows.find(r=>r.segment==='1_one_timer')||{guests:0,avg_rev:0});
+  const otPct=sTotal?Math.round(sOT.guests/sTotal*100):0;
+  s4Html+=`<div><div class="kpi" style="margin-bottom:.8rem"><div class="v red">${otPct} %</div><div class="l">${season} : ${F(sOT.guests)} sur ${F(sTotal)} ne reviennent pas</div></div>`;
+  s4Html+=`<table><thead><tr><th>Frequence</th><th class="n">Personnes</th><th class="n">Reserv.</th><th class="n">Revenus</th><th class="n">Rev./pers.</th></tr></thead><tbody>`;
+  sRows.forEach(r=>{
+    const pct=sTotal?Math.round(r.guests/sTotal*100):0;
+    s4Html+=`<tr><td>${retSegs[r.segment]||r.segment} (${pct} %)</td><td class="n">${F(r.guests)}</td><td class="n">${F(r.bookings)}</td><td class="n">${FE(r.rev)}</td><td class="n">${FE(r.avg_rev)}</td></tr>`;
+  });
+  s4Html+=`</tbody></table>`;
+  s4Html+=`<p style="font-size:.82rem;margin-top:.4rem">Si 10 % des « une seule fois » de ${season} revenaient : <strong>${FE(Math.round(sOT.guests*0.1*(sOT.avg_rev||155)))}</strong> de revenus supplementaires.</p></div>`;
+});
+document.getElementById('s4-seasons').innerHTML=s4Html;
+
 const freq=S.frequencyRevenue||[];
 const freqSeasons=[...new Set(freq.map(r=>r.season))];
-const yoyKpis=freqSeasons.map(s=>{
-  const sRows=freq.filter(r=>r.season===s);
-  const totalP=sRows.reduce((a,r)=>a+r.guests,0);
-  const oneTimers=sRows.find(r=>r.frequency==='1 fois')||{guests:0};
-  const pct=totalP?Math.round(oneTimers.guests/totalP*100):0;
-  return {season:s,oneTimers:oneTimers.guests,total:totalP,pct};
-});
-document.getElementById('s4-yoy').innerHTML=yoyKpis.map(k=>
-  `<div class="kpi"><div class="v red">${k.pct} %</div><div class="l">${k.season} : ${F(k.oneTimers)} sur ${F(k.total)} visiteurs<br>n'ont fait qu'une seule inscription</div></div>`
-).join('');
-
-// S4: Retention segments (3-season aggregate)
-const retSegs={'1_one_timer':'1 seule fois','2_light':'2-3 fois','3_moderate':'4-10 fois','4_regular':'11+ fois'};
-document.querySelector('#t-ret tbody').innerHTML=ret.map(r=>{
-  const pct=totalG?Math.round(r.guests/totalG*100):0;
-  return `<tr><td>${retSegs[r.segment]||r.segment} (${pct} %)</td><td class="n">${F(r.guests)}</td><td class="n">${F(r.bookings)}</td><td class="n">${FE(r.rev)}</td><td class="n">${FE(r.avg_rev)}</td></tr>`;
-}).join('');
-DC('ret');CX.ret=new Chart(document.getElementById('c-ret'),{type:'doughnut',data:{labels:ret.map(r=>{const p=totalG?Math.round(r.guests/totalG*100):0;return (retSegs[r.segment]||r.segment)+' ('+p+' %)';}),datasets:[{data:ret.map(r=>r.guests),backgroundColor:['#c62828','#f57c00','#1565c0','#2e7d32']}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:12,font:{size:11}}}}}});
-document.getElementById('v-avg1').textContent=FE(oneT.avg_rev||0);
-document.getElementById('v-double1').textContent=FE(Math.round(oneT.guests*0.1*(oneT.avg_rev||155)));
-
-document.querySelector('#t-freq tbody').innerHTML=freq.map((r,i)=>{
-  const si=freqSeasons.indexOf(r.season);
-  return `<tr class="${si%2===0?'season-a':'season-b'}"><td>${r.season}</td><td>${r.frequency}</td><td class="n">${F(r.guests)}</td><td class="n">${F(r.bookings)}</td><td class="n">${FE(r.rev)}</td><td class="n">${FE(r.avg_pp)}</td></tr>`;
-}).join('');
 
 // S5: Retention YoY (only 23-24 and 24-25 — 25-26 excluded)
 const ry=(S.retentionYoY||[]).filter(r=>r.season!=='25-26');
@@ -483,13 +457,7 @@ if(vipD.length>=2){
   document.getElementById('vip-explain').innerHTML=`<strong>Meme nombre de participants (69), mais des sejours plus longs :</strong> ${a.avg_nights} nuits en moyenne en ${a.edition||'Dec 2024'} contre ${b.avg_nights} nuits en ${b.edition||'Dec 2025'}. Le supplement de 2 nuits par personne genere +${FE(Math.round((b.lodg_rev||0)-(a.lodg_rev||0)))} en hebergement et +${FE(Math.round((b.meal_rev||0)-(a.meal_rev||0)))} en repas. De plus, davantage de participants ont choisi des chambres a 2 ou des CI+. Personne n'a augmente le prix — c'est la communaute qui a grandi.`;
 }
 
-// Case: Maurel
-const mau=(S.caseMaurel||[])[0]||{};
-document.getElementById('v-mau-n').textContent=F(mau.total_first_timers||0);
-document.getElementById('v-mau-ret').textContent=F(mau.returned||0);
-document.getElementById('v-mau-pct').textContent=FP(mau.pct||0);
-document.getElementById('v-mau-rev').textContent=FE(mau.subsequent_rev||0);
-document.getElementById('v-mau-n2').textContent=F(mau.total_first_timers||0);
+// (Maurel case study removed)
 
 // Case: Vajrasattva with detail
 const vajD=S.vajrasattvaDetail||[];
@@ -506,10 +474,7 @@ const topTotal=topG.reduce((s,r)=>s+r.rev,0);
 document.getElementById('top-explain').innerHTML=`Ces 10 personnes ont genere a elles seules <strong>${FE(topTotal)}</strong> de revenus sur 3 saisons. Chacune a commence par une premiere visite. <strong>Combien des ${F(oneT.guests)} visiteurs uniques actuels pourraient devenir le prochain regulier ?</strong>`;
 
 // Case: Nelson
-const nel=(S.caseNelson||[])[0]||{};
-document.getElementById('v-nel-ret').textContent=F(nel.returned_2425||0);
-document.getElementById('v-nel-pct').textContent='64 %';
-document.getElementById('v-nel-new').textContent=F(nel.new_2425||0);
+// (Nelson case study removed)
 
 // JPO case study
 const jpo=S.caseJPO||[];
