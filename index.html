@@ -132,7 +132,7 @@ tr:hover{background:#f5f8f5}
 <div class="section">
   <div class="num">Constat 4</div>
   <h2>La majorite des visiteurs ne revient jamais</h2>
-  <p>En ne regardant que la <strong>programmation bouddhiste</strong> (hors stages non-bouddhistes, celebrations, sejours personnels et IDMT), voici combien de personnes n'ont fait qu'une seule reservation. Le chiffre global masque l'evolution d'une saison a l'autre :</p>
+  <p>En ne regardant que la <strong>programmation bouddhiste</strong> (hors stages non-bouddhistes, celebrations, sejours personnels et IDMT), et en ne comptant que les <strong>personnes venues pour la premiere fois en 23-24 ou 24-25</strong> (ceux de 25-26 n'ont pas encore eu le temps de revenir) :</p>
   <div class="kpi-row" id="s4-yoy"></div>
   <div class="g2">
     <div class="chart-box" style="height:260px"><canvas id="c-ret"></canvas></div>
@@ -151,7 +151,7 @@ tr:hover{background:#f5f8f5}
 <div class="section">
   <div class="num">Constat 5</div>
   <h2>La retention se degrade</h2>
-  <p>En comparant les cohortes de nouveaux visiteurs de la programmation bouddhiste par saison, nous constatons que de moins en moins de personnes reviennent essayer un autre evenement.</p>
+  <p>En comparant les cohortes 23-24 et 24-25 (les seules ayant eu suffisamment de temps pour revenir), nous constatons que le taux de retour a fortement baisse :</p>
   <div class="chart-box" style="height:240px"><canvas id="c-rety"></canvas></div>
   <table id="t-rety"><thead><tr><th>Premiere saison</th><th class="n">Nouveaux visiteurs</th><th class="n">Ont essaye un autre evenement</th><th class="n">N'ont rien essaye d'autre</th><th class="n">Taux de retour</th></tr></thead><tbody></tbody></table>
   <div class="callout red" id="rety-insight"></div>
@@ -161,7 +161,7 @@ tr:hover{background:#f5f8f5}
 <div class="section">
   <div class="num">Constat 6</div>
   <h2>Qui sont les gens qui ne reviennent pas ?</h2>
-  <p>En excluant les stages non-bouddhistes (Maurel, Nelson, Qi Gong, yoga, etc.), les celebrations et les sejours personnels, voici le profil des personnes venues pour la <strong>programmation bouddhiste</strong> qui n'ont jamais fait d'autre reservation :</p>
+  <p>Profil des personnes venues pour la <strong>programmation bouddhiste en 23-24 ou 24-25</strong> qui n'ont jamais fait d'autre reservation (les visiteurs de 25-26 sont exclus car ils n'ont pas encore eu le temps de revenir) :</p>
 
   <div class="kpi-row" id="s6-kpi"></div>
 
@@ -200,6 +200,14 @@ tr:hover{background:#f5f8f5}
   <h3>Nouveaux eleves vs eleves existants</h3>
   <table id="t-intro-nr"><thead><tr><th>Saison</th><th class="n">Total eleves</th><th class="n">Nouveaux</th><th class="n">Deja venus</th><th class="n">% nouveaux</th></tr></thead><tbody></tbody></table>
   <div class="callout green"><strong>Quand le pipeline fonctionne, il fonctionne bien</strong> — 129 personnes sont devenues des reguliers. Mais 192 ont disparu apres leur initiation. La question strategique est : pourquoi, et comment les retenir ?</div>
+</div>
+
+<!-- S8: Event pipelines -->
+<div class="section">
+  <div class="num">Constat 8</div>
+  <h2>Parcours par type d'evenement : qui revient apres ?</h2>
+  <p>Pour chaque type d'evenement d'entree, voici le taux de retour instance par instance. La date permet de voir combien de temps les participants ont eu pour revenir.</p>
+  <div id="pipeline-tables"></div>
 </div>
 
 <!-- CASE STUDIES -->
@@ -389,17 +397,16 @@ document.querySelector('#t-freq tbody').innerHTML=freq.map((r,i)=>{
   return `<tr class="${si%2===0?'season-a':'season-b'}"><td>${r.season}</td><td>${r.frequency}</td><td class="n">${F(r.guests)}</td><td class="n">${F(r.bookings)}</td><td class="n">${FE(r.rev)}</td><td class="n">${FE(r.avg_pp)}</td></tr>`;
 }).join('');
 
-// S5: Retention YoY
-const ry=(S.retentionYoY||[]);
-document.querySelector('#t-rety tbody').innerHTML=ry.map(r=>`<tr><td>${r.season}${r.season==='25-26'?' *':''}</td><td class="n">${F(r.new_guests)}</td><td class="n pos">${F(r.returned)}</td><td class="n neg">${F(r.never_returned)}</td><td class="n ${r.retention_pct>40?'pos':'neg'}">${FP(r.retention_pct)}</td></tr>`).join('');
-DC('rety');CX.rety=new Chart(document.getElementById('c-rety'),{type:'bar',data:{labels:ry.map(r=>r.season+(r.season==='25-26'?' *':'')),datasets:[
+// S5: Retention YoY (only 23-24 and 24-25 — 25-26 excluded)
+const ry=(S.retentionYoY||[]).filter(r=>r.season!=='25-26');
+document.querySelector('#t-rety tbody').innerHTML=ry.map(r=>`<tr><td>${r.season}</td><td class="n">${F(r.new_guests)}</td><td class="n pos">${F(r.returned)}</td><td class="n neg">${F(r.never_returned)}</td><td class="n ${r.retention_pct>40?'pos':'neg'}">${FP(r.retention_pct)}</td></tr>`).join('');
+DC('rety');CX.rety=new Chart(document.getElementById('c-rety'),{type:'bar',data:{labels:ry.map(r=>r.season),datasets:[
   {label:'Ont essaye un autre evenement',data:ry.map(r=>r.returned),backgroundColor:'#2e7d32'},
   {label:'Pas revenu pour autre chose',data:ry.map(r=>r.never_returned),backgroundColor:'#ef9a9a'}
 ]},options:{responsive:true,maintainAspectRatio:false,scales:{x:{stacked:true},y:{stacked:true}},plugins:{legend:{position:'bottom'}}}});
 const ry0=ry.find(r=>r.season==='23-24')||{retention_pct:0};
 const ry1=ry.find(r=>r.season==='24-25')||{retention_pct:0};
-const ry2=ry.find(r=>r.season==='25-26')||{retention_pct:0};
-document.getElementById('rety-insight').innerHTML=`<strong>Parmi les nouveaux visiteurs, ${FP(ry0.retention_pct)} de ceux de 23-24 ont essaye un autre evenement, contre ${FP(ry1.retention_pct)} pour ceux de 24-25.</strong> La saison 25-26 affiche ${FP(ry2.retention_pct)} mais elle n'est pas terminee (*). Cette tendance a la baisse est preoccupante.`;
+document.getElementById('rety-insight').innerHTML=`<strong>Parmi les nouveaux visiteurs de la programmation bouddhiste, ${FP(ry0.retention_pct)} de ceux de 23-24 ont essaye un autre evenement, contre seulement ${FP(ry1.retention_pct)} pour ceux de 24-25.</strong> Le taux de retour a chute de moitie en un an.`;
 
 // S6: Buddhist one-timers deep-dive
 const botS=S.buddhistOneTimersBySeason||[];
@@ -446,6 +453,23 @@ document.querySelector('#t-intro tbody').innerHTML=intro.map(r=>`<tr><td>${intro
 DC('intro');CX.intro=new Chart(document.getElementById('c-intro'),{type:'pie',data:{labels:intro.map(r=>introSegs[r.segment]),datasets:[{data:intro.map(r=>r.guests),backgroundColor:['#c62828','#f57c00','#1565c0','#2e7d32']}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:12,font:{size:11}}}}}});
 const inr=S.introNewVsReturning||[];
 document.querySelector('#t-intro-nr tbody').innerHTML=inr.map(r=>`<tr><td>${r.season}</td><td class="n">${F(r.total)}</td><td class="n">${F(r.new_students)}</td><td class="n">${F(r.returning)}</td><td class="n">${r.total?FP(r.new_students/r.total*100):'—'}</td></tr>`).join('');
+
+// S8: Event pipeline case studies
+const pipes=S.eventPipelines||[];
+const pipeCodes=[...new Set(pipes.map(r=>r.code))];
+const pipeLabels={};pipes.forEach(r=>pipeLabels[r.code]=r.label);
+let pipeHtml='';
+pipeCodes.forEach(code=>{
+  const items=pipes.filter(r=>r.code===code);
+  pipeHtml+=`<div class="case"><h4>${pipeLabels[code]||code}</h4><table><thead><tr><th>Instance</th><th>Date</th><th class="n">Participants</th><th class="n">Revenus ensuite</th><th class="n">Taux retour</th></tr></thead><tbody>`;
+  items.forEach(r=>{
+    const pct=r.attendees?Math.round(r.returned/r.attendees*100):0;
+    const cls=pct>=40?'pos':pct<20?'neg':'';
+    pipeHtml+=`<tr><td>${r.instance.replace(/\([\d-]+\)/g,'').trim()}</td><td>${r.event_date}</td><td class="n">${F(r.attendees)}</td><td class="n">${FE(r.subsequent_rev)}</td><td class="n ${cls}">${F(r.returned)} (${pct} %)</td></tr>`;
+  });
+  pipeHtml+=`</tbody></table></div>`;
+});
+document.getElementById('pipeline-tables').innerHTML=pipeHtml;
 
 // Case: Vipassana with detail
 const vip=S.caseVipassana||[];

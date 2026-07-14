@@ -2688,24 +2688,24 @@
  "guestRetention": [
   {
    "segment": "1_one_timer",
-   "guests": 1150,
-   "bookings": 1150,
-   "rev": 183183.52,
-   "avg_rev": 159.29
+   "guests": 725,
+   "bookings": 725,
+   "rev": 106365.92,
+   "avg_rev": 146.71
   },
   {
    "segment": "2_light",
-   "guests": 474,
-   "bookings": 1111,
-   "rev": 175723.96,
-   "avg_rev": 370.73
+   "guests": 394,
+   "bookings": 931,
+   "rev": 152982.13,
+   "avg_rev": 388.28
   },
   {
    "segment": "3_moderate",
-   "guests": 244,
-   "bookings": 1395,
-   "rev": 150308.7,
-   "avg_rev": 616.02
+   "guests": 235,
+   "bookings": 1359,
+   "rev": 147958.87,
+   "avg_rev": 629.61
   },
   {
    "segment": "4_regular",
@@ -3870,13 +3870,6 @@
    "returned": 186,
    "never_returned": 446,
    "retention_pct": 29.4
-  },
-  {
-   "season": "25-26",
-   "new_guests": 534,
-   "returned": 79,
-   "never_returned": 455,
-   "retention_pct": 14.8
   }
  ],
  "frequencyRevenue": [
@@ -3943,38 +3936,6 @@
    "bookings": 407,
    "rev": 15909.02,
    "avg_pp": 568.18
-  },
-  {
-   "season": "25-26",
-   "frequency": "1 fois",
-   "guests": 647,
-   "bookings": 647,
-   "rev": 124318.02,
-   "avg_pp": 192.15
-  },
-  {
-   "season": "25-26",
-   "frequency": "2-3 fois",
-   "guests": 205,
-   "bookings": 476,
-   "rev": 66905.34,
-   "avg_pp": 326.37
-  },
-  {
-   "season": "25-26",
-   "frequency": "4-10 fois",
-   "guests": 95,
-   "bookings": 540,
-   "rev": 48555.77,
-   "avg_pp": 511.11
-  },
-  {
-   "season": "25-26",
-   "frequency": "11+ fois",
-   "guests": 20,
-   "bookings": 283,
-   "rev": 15824.69,
-   "avg_pp": 791.23
   }
  ],
  "caseVipassana": [
@@ -4280,66 +4241,35 @@
   {
    "season": "24-25",
    "one_timers": 389,
-   "total_guests": 994,
+   "total_guests": 632,
    "stayed": 212,
    "day_only": 133,
    "online": 43,
    "rev": 53938.14,
    "avg_pp": 138.66
-  },
-  {
-   "season": "25-26",
-   "one_timers": 429,
-   "total_guests": 967,
-   "stayed": 239,
-   "day_only": 143,
-   "online": 47,
-   "rev": 72745.23,
-   "avg_pp": 169.57
   }
  ],
  "buddhistOneTimersByEvent": [
   {
    "event": "Initiation à la méditation",
-   "one_timers": 124,
-   "stayed": 72,
-   "rev": 6979.61,
-   "avg_pp": 56.29
+   "one_timers": 84,
+   "stayed": 46,
+   "rev": 4052.3,
+   "avg_pp": 48.24
   },
   {
    "event": "Retraite de 108 Nyoung-Nés",
-   "one_timers": 100,
-   "stayed": 98,
-   "rev": 33552.47,
-   "avg_pp": 335.52
+   "one_timers": 62,
+   "stayed": 61,
+   "rev": 24111.8,
+   "avg_pp": 388.9
   },
   {
    "event": "Pratique intensive de Vajrasattva / Intensive practice of Vajrasattva",
-   "one_timers": 69,
-   "stayed": 47,
-   "rev": 13557.94,
-   "avg_pp": 196.49
-  },
-  {
-   "event": "Initiation au bouddhisme",
-   "one_timers": 52,
-   "stayed": 27,
-   "rev": 3296.41,
-   "avg_pp": 63.39
-  },
-  {
-   "event": "Retraite sur le souffle de la voie (Vipassana) [SUR PLACE]",
-   "one_timers": 48,
-   "stayed": 40,
-   "rev": 17928.68,
-   "avg_pp": 373.51
-  },
-  {
-   "event": "Découverte du bouddhisme",
-   "one_timers": 46,
-   "stayed": 24,
-   "rev": 2888.22,
-   "avg_pp": 62.79
+   "one_timers": 54,
+   "stayed": 33,
+   "rev": 7147.34,
+   "avg_pp": 132.36
   },
   {
    "event": "[obsolète] Expérience de la pratique de Vajra Yogini",
@@ -4349,46 +4279,18 @@
    "avg_pp": 187.9
   },
   {
-   "event": "L'entraînement de l'esprit en huit versets",
-   "one_timers": 44,
-   "stayed": 24,
-   "rev": 1740.61,
-   "avg_pp": 39.56
+   "event": "Découverte du bouddhisme",
+   "one_timers": 37,
+   "stayed": 18,
+   "rev": 2007.88,
+   "avg_pp": 54.27
   },
   {
-   "event": "Serkong Rinpoché & Alexander Berzin (SUR PLACE / ONSITE)",
-   "one_timers": 34,
-   "stayed": 20,
-   "rev": 3318.07,
-   "avg_pp": 97.59
-  },
-  {
-   "event": "Peinture de tsa-tsas",
+   "event": "Retraite sur le souffle de la voie (Vipassana) [SUR PLACE]",
    "one_timers": 32,
-   "stayed": 12,
-   "rev": 1207.09,
-   "avg_pp": 37.72
-  },
-  {
-   "event": "Initiation et commentaire de Vajra Yogini par Jhado Rinpoché",
-   "one_timers": 31,
-   "stayed": 19,
-   "rev": 7831.65,
-   "avg_pp": 252.63
-  },
-  {
-   "event": "Initiation Je Rigsum Chidrup (Lama Tsong Khapa)",
-   "one_timers": 30,
-   "stayed": 2,
-   "rev": 469.28,
-   "avg_pp": 15.64
-  },
-  {
-   "event": "La Science Bouddhiste de l'Esprit (SBE)",
-   "one_timers": 30,
-   "stayed": 8,
-   "rev": 885.66,
-   "avg_pp": 29.52
+   "stayed": 24,
+   "rev": 10363.23,
+   "avg_pp": 323.85
   },
   {
    "event": "[obsolète] Mini-retraite Vipassana SUR PLACE",
@@ -4398,6 +4300,13 @@
    "avg_pp": 69.24
   },
   {
+   "event": "L'entraînement de l'esprit en huit versets",
+   "one_timers": 27,
+   "stayed": 15,
+   "rev": 1087.6,
+   "avg_pp": 40.28
+  },
+  {
    "event": "[obsolète] Retraite  avec Vén. Robina : Affronter la mort sans crainte",
    "one_timers": 27,
    "stayed": 17,
@@ -4405,25 +4314,11 @@
    "avg_pp": 151.88
   },
   {
-   "event": "PEBA (Programme d'Etudes Bouddhiques Approfondi)",
-   "one_timers": 27,
-   "stayed": 18,
-   "rev": 2260.56,
-   "avg_pp": 83.72
-  },
-  {
-   "event": "Serkong Rinpoché & Alexander Berzin (VIA ZOOM)",
+   "event": "Initiation au bouddhisme",
    "one_timers": 25,
-   "stayed": 0,
-   "rev": 750.0,
-   "avg_pp": 30.0
-  },
-  {
-   "event": "Lama Tcheupa",
-   "one_timers": 24,
-   "stayed": 1,
-   "rev": 66.22,
-   "avg_pp": 2.76
+   "stayed": 13,
+   "rev": 1242.43,
+   "avg_pp": 49.7
   },
   {
    "event": "[obsolète] Retraite de Vajra Yogini",
@@ -4433,32 +4328,25 @@
    "avg_pp": 511.42
   },
   {
-   "event": "16 attitudes pour mieux vivre - Niveau 1",
+   "event": "Lama Tcheupa",
+   "one_timers": 21,
+   "stayed": 1,
+   "rev": 66.22,
+   "avg_pp": 3.15
+  },
+  {
+   "event": "PEBA (Programme d'Etudes Bouddhiques Approfondi)",
+   "one_timers": 20,
+   "stayed": 14,
+   "rev": 1509.36,
+   "avg_pp": 75.47
+  },
+  {
+   "event": "Serkong Rinpoché & Alexander Berzin (SUR PLACE / ONSITE)",
    "one_timers": 18,
-   "stayed": 10,
-   "rev": 1438.98,
-   "avg_pp": 79.94
-  },
-  {
-   "event": "Retraite d'été de Lamrim (SUR PLACE)",
-   "one_timers": 17,
-   "stayed": 13,
-   "rev": 3737.9,
-   "avg_pp": 219.88
-  },
-  {
-   "event": "Retraite du Bouddha Médecine..",
-   "one_timers": 17,
-   "stayed": 11,
-   "rev": 4037.7,
-   "avg_pp": 237.51
-  },
-  {
-   "event": "Retraite de Lamrim avec Vénérable Gendun [SUR PLACE]",
-   "one_timers": 16,
-   "stayed": 16,
-   "rev": 15790.75,
-   "avg_pp": 986.92
+   "stayed": 6,
+   "rev": 909.57,
+   "avg_pp": 50.53
   },
   {
    "event": "[obsolète] Atelier et conférence avec vénérable Thubten Chodron (SUR PLACE)",
@@ -4468,11 +4356,11 @@
    "avg_pp": 76.08
   },
   {
-   "event": "Pratique du Bouddha Médecine",
+   "event": "Retraite d'été de Lamrim (SUR PLACE)",
    "one_timers": 16,
-   "stayed": 1,
-   "rev": 95.82,
-   "avg_pp": 5.99
+   "stayed": 12,
+   "rev": 3125.96,
+   "avg_pp": 195.37
   },
   {
    "event": "[obsolète] Retraite avec Vénérable Gendun : La voie du coeur",
@@ -4482,39 +4370,18 @@
    "avg_pp": 275.37
   },
   {
-   "event": "Retraite de Shiné",
-   "one_timers": 15,
-   "stayed": 14,
-   "rev": 3882.27,
-   "avg_pp": 258.82
-  },
-  {
-   "event": "Demeurer calme et la vue supérieure (Shamata et Vipashyana)",
-   "one_timers": 14,
-   "stayed": 14,
-   "rev": 5341.39,
-   "avg_pp": 381.53
-  },
-  {
-   "event": "Retraite avec Vén. Robina / Retreat with Ven. Robina",
+   "event": "Peinture de tsa-tsas",
    "one_timers": 12,
-   "stayed": 10,
-   "rev": 2774.67,
-   "avg_pp": 231.22
+   "stayed": 5,
+   "rev": 322.9,
+   "avg_pp": 26.91
   },
   {
-   "event": "Retraite de Lamrim (Voie graduée vers l’éveil)",
-   "one_timers": 11,
-   "stayed": 2,
-   "rev": 440.5,
-   "avg_pp": 40.05
-  },
-  {
-   "event": "Séminaire essentiel pour le service au sein de la FPMT",
-   "one_timers": 11,
-   "stayed": 6,
-   "rev": 1934.08,
-   "avg_pp": 175.83
+   "event": "16 attitudes pour mieux vivre - Niveau 1",
+   "one_timers": 12,
+   "stayed": 7,
+   "rev": 1082.16,
+   "avg_pp": 90.18
   },
   {
    "event": "La Bienveillance et les 16 Attitudes pour Mieux Vivre",
@@ -4524,6 +4391,20 @@
    "avg_pp": 53.0
   },
   {
+   "event": "Retraite de Lamrim (Voie graduée vers l’éveil)",
+   "one_timers": 11,
+   "stayed": 2,
+   "rev": 440.5,
+   "avg_pp": 40.05
+  },
+  {
+   "event": "Retraite de Shiné",
+   "one_timers": 11,
+   "stayed": 10,
+   "rev": 2772.87,
+   "avg_pp": 252.08
+  },
+  {
    "event": "Enseignements de Jan Willis",
    "one_timers": 10,
    "stayed": 2,
@@ -4531,32 +4412,11 @@
    "avg_pp": 4.78
   },
   {
-   "event": "L’art de vivre et de mourir : enseignements essentiels",
+   "event": "Retraite du Bouddha Médecine..",
    "one_timers": 9,
-   "stayed": 4,
-   "rev": 717.9,
-   "avg_pp": 79.77
-  },
-  {
-   "event": "Enseignements de Guéshé Lodèn",
-   "one_timers": 8,
-   "stayed": 4,
-   "rev": 215.52,
-   "avg_pp": 26.94
-  },
-  {
-   "event": "ZOOM Retraite de Lamrim avec Vénérable Gendun [EN LIGNE]",
-   "one_timers": 8,
-   "stayed": 0,
-   "rev": 1944.0,
-   "avg_pp": 243.0
-  },
-  {
-   "event": "[obsolète] Retraite avec Vén. Robina (SUR PLACE) : La compassion courageuse",
-   "one_timers": 7,
-   "stayed": 6,
-   "rev": 1576.1,
-   "avg_pp": 225.16
+   "stayed": 5,
+   "rev": 2143.8,
+   "avg_pp": 238.2
   },
   {
    "event": "Pratique de Tara",
@@ -4566,18 +4426,11 @@
    "avg_pp": 7.14
   },
   {
-   "event": "Pratique intensive de Tchènrézi",
-   "one_timers": 6,
+   "event": "[obsolète] Retraite avec Vén. Robina (SUR PLACE) : La compassion courageuse",
+   "one_timers": 7,
    "stayed": 6,
-   "rev": 677.98,
-   "avg_pp": 113.0
-  },
-  {
-   "event": "[obsolète] Retraite avec Vén. Robina (VIA ZOOM) : La compassion courageuse",
-   "one_timers": 6,
-   "stayed": 0,
-   "rev": 284.0,
-   "avg_pp": 47.33
+   "rev": 1576.1,
+   "avg_pp": 225.16
   },
   {
    "event": "[obsolète] Retraite : apprentissage de la bienveillance",
@@ -4587,18 +4440,11 @@
    "avg_pp": 89.18
   },
   {
-   "event": "Enseignement du Dr Alexander Berzin",
-   "one_timers": 6,
-   "stayed": 2,
-   "rev": 93.84,
-   "avg_pp": 15.64
-  },
-  {
-   "event": "16 attitudes pour mieux communiquer",
+   "event": "[obsolète] Retraite avec Vén. Robina (VIA ZOOM) : La compassion courageuse",
    "one_timers": 6,
    "stayed": 0,
-   "rev": 146.9,
-   "avg_pp": 24.48
+   "rev": 284.0,
+   "avg_pp": 47.33
   },
   {
    "event": "[obsolète] Retraite de Bodhicitta et de Tara blanche (SUR PLACE)",
@@ -4608,18 +4454,18 @@
    "avg_pp": 200.04
   },
   {
-   "event": "Retraite de 100000 bols d'eau",
-   "one_timers": 5,
-   "stayed": 5,
-   "rev": 3064.82,
-   "avg_pp": 612.96
-  },
-  {
    "event": "Initiation de Vajrasattva / Vajrasattva empowerment",
    "one_timers": 5,
    "stayed": 0,
    "rev": 30.0,
    "avg_pp": 6.0
+  },
+  {
+   "event": "Retraite de 100000 bols d'eau",
+   "one_timers": 5,
+   "stayed": 5,
+   "rev": 3064.82,
+   "avg_pp": 612.96
   }
  ],
  "buddhistOneTimersStay": [
@@ -4678,34 +4524,6 @@
    "people": 51,
    "rev": 24837.83,
    "avg_pp": 487.02
-  },
-  {
-   "season": "25-26",
-   "stay": "0_jour",
-   "people": 190,
-   "rev": 5607.14,
-   "avg_pp": 29.51
-  },
-  {
-   "season": "25-26",
-   "stay": "1_court",
-   "people": 79,
-   "rev": 6343.11,
-   "avg_pp": 80.29
-  },
-  {
-   "season": "25-26",
-   "stay": "2_moyen",
-   "people": 83,
-   "rev": 16723.53,
-   "avg_pp": 201.49
-  },
-  {
-   "season": "25-26",
-   "stay": "3_long",
-   "people": 77,
-   "rev": 44071.45,
-   "avg_pp": 572.36
   }
  ],
  "caseJPO": [
@@ -4729,6 +4547,683 @@
    "jpo_only": 68,
    "pct": 34.6,
    "subsequent_rev": 14819.63
+  }
+ ],
+ "eventPipelines": [
+  {
+   "label": "Journee portes ouvertes",
+   "code": "JPO",
+   "instance": "Journée portes ouvertes (2023-oct.-01-01)",
+   "event_date": "2023-10-01",
+   "attendees": 9,
+   "returned": 3,
+   "subsequent_rev": 535.16
+  },
+  {
+   "label": "Journee portes ouvertes",
+   "code": "JPO",
+   "instance": "Journée portes ouvertes (1404)",
+   "event_date": "2026-05-02",
+   "attendees": 95,
+   "returned": 13,
+   "subsequent_rev": 1617.95
+  },
+  {
+   "label": "Initiation a la Meditation (IM)",
+   "code": "IM",
+   "instance": "IM1 (2023-déc.-16-01)",
+   "event_date": "2023-12-15",
+   "attendees": 31,
+   "returned": 10,
+   "subsequent_rev": 7027.2
+  },
+  {
+   "label": "Initiation a la Meditation (IM)",
+   "code": "IM",
+   "instance": "IM2 (2023-déc.-18-01)",
+   "event_date": "2023-12-17",
+   "attendees": 11,
+   "returned": 5,
+   "subsequent_rev": 813.27
+  },
+  {
+   "label": "Initiation a la Meditation (IM)",
+   "code": "IM",
+   "instance": "IM1 (2024-mars-02-02)",
+   "event_date": "2024-03-01",
+   "attendees": 26,
+   "returned": 11,
+   "subsequent_rev": 11810.08
+  },
+  {
+   "label": "Initiation a la Meditation (IM)",
+   "code": "IM",
+   "instance": "IM1 (2024-juil.-20-01)",
+   "event_date": "2024-07-18",
+   "attendees": 36,
+   "returned": 16,
+   "subsequent_rev": 6013.31
+  },
+  {
+   "label": "Initiation a la Meditation (IM)",
+   "code": "IM",
+   "instance": "IM2 (2024-oct.-26-02)",
+   "event_date": "2024-07-20",
+   "attendees": 21,
+   "returned": 12,
+   "subsequent_rev": 4629.14
+  },
+  {
+   "label": "Initiation a la Meditation (IM)",
+   "code": "IM",
+   "instance": "IM2 (2024-juil.-22-01)",
+   "event_date": "2024-07-21",
+   "attendees": 17,
+   "returned": 7,
+   "subsequent_rev": 960.8
+  },
+  {
+   "label": "Initiation a la Meditation (IM)",
+   "code": "IM",
+   "instance": "IM1 (2024-oct.-05-01)",
+   "event_date": "2024-10-05",
+   "attendees": 32,
+   "returned": 10,
+   "subsequent_rev": 4209.42
+  },
+  {
+   "label": "Initiation a la Meditation (IM)",
+   "code": "IM",
+   "instance": "IM1 (1108)",
+   "event_date": "2025-05-23",
+   "attendees": 27,
+   "returned": 7,
+   "subsequent_rev": 1311.82
+  },
+  {
+   "label": "Initiation a la Meditation (IM)",
+   "code": "IM",
+   "instance": "IM2 (1109)",
+   "event_date": "2025-06-13",
+   "attendees": 17,
+   "returned": 8,
+   "subsequent_rev": 2315.97
+  },
+  {
+   "label": "Initiation a la Meditation (IM)",
+   "code": "IM",
+   "instance": "IM1 (1232)",
+   "event_date": "2025-12-12",
+   "attendees": 29,
+   "returned": 9,
+   "subsequent_rev": 1605.42
+  },
+  {
+   "label": "Initiation a la Meditation (IM)",
+   "code": "IM",
+   "instance": "IM1 (1344)",
+   "event_date": "2026-03-06",
+   "attendees": 55,
+   "returned": 17,
+   "subsequent_rev": 1424.0
+  },
+  {
+   "label": "Initiation a la Meditation (IM)",
+   "code": "IM",
+   "instance": "IM2 (1345)",
+   "event_date": "2026-04-10",
+   "attendees": 30,
+   "returned": 9,
+   "subsequent_rev": 734.2
+  },
+  {
+   "label": "Initiation a la Meditation (IM)",
+   "code": "IM",
+   "instance": "IM3 (1346)",
+   "event_date": "2026-05-07",
+   "attendees": 24,
+   "returned": 9,
+   "subsequent_rev": 1411.94
+  },
+  {
+   "label": "Initiation au Bouddhisme (IB)",
+   "code": "IB",
+   "instance": "IB (2023-oct.-14-04)",
+   "event_date": "2023-10-13",
+   "attendees": 9,
+   "returned": 6,
+   "subsequent_rev": 7034.79
+  },
+  {
+   "label": "Initiation au Bouddhisme (IB)",
+   "code": "IB",
+   "instance": "IB (2024-déc.-14-02)",
+   "event_date": "2024-12-13",
+   "attendees": 16,
+   "returned": 8,
+   "subsequent_rev": 3010.77
+  },
+  {
+   "label": "Initiation au Bouddhisme (IB)",
+   "code": "IB",
+   "instance": "IB (1107)",
+   "event_date": "2025-04-18",
+   "attendees": 22,
+   "returned": 7,
+   "subsequent_rev": 739.02
+  },
+  {
+   "label": "Initiation au Bouddhisme (IB)",
+   "code": "IB",
+   "instance": "IB (1236)",
+   "event_date": "2025-10-24",
+   "attendees": 26,
+   "returned": 17,
+   "subsequent_rev": 2449.74
+  },
+  {
+   "label": "Initiation au Bouddhisme (IB)",
+   "code": "IB",
+   "instance": "IB (1347)",
+   "event_date": "2026-06-05",
+   "attendees": 23,
+   "returned": 1,
+   "subsequent_rev": 47.45
+  },
+  {
+   "label": "Decouverte du Bouddhisme (DB)",
+   "code": "DB",
+   "instance": "DB8 (2023-oct.-14-03)",
+   "event_date": "2023-10-13",
+   "attendees": 28,
+   "returned": 22,
+   "subsequent_rev": 21999.18
+  },
+  {
+   "label": "Decouverte du Bouddhisme (DB)",
+   "code": "DB",
+   "instance": "DB9-1 (2023-nov.-11-07)",
+   "event_date": "2023-11-10",
+   "attendees": 25,
+   "returned": 18,
+   "subsequent_rev": 13448.51
+  },
+  {
+   "label": "Decouverte du Bouddhisme (DB)",
+   "code": "DB",
+   "instance": "DB9-2 (2023-déc.-09-02)",
+   "event_date": "2023-12-08",
+   "attendees": 28,
+   "returned": 22,
+   "subsequent_rev": 21250.62
+  },
+  {
+   "label": "Decouverte du Bouddhisme (DB)",
+   "code": "DB",
+   "instance": "DB10 (2024-mars-23-01)",
+   "event_date": "2024-03-22",
+   "attendees": 27,
+   "returned": 16,
+   "subsequent_rev": 11663.78
+  },
+  {
+   "label": "Decouverte du Bouddhisme (DB)",
+   "code": "DB",
+   "instance": "DB11 (2024-avr.-20-01)",
+   "event_date": "2024-04-19",
+   "attendees": 20,
+   "returned": 16,
+   "subsequent_rev": 12158.21
+  },
+  {
+   "label": "Decouverte du Bouddhisme (DB)",
+   "code": "DB",
+   "instance": "DB12 (2022-mai-18-01)",
+   "event_date": "2024-05-17",
+   "attendees": 27,
+   "returned": 20,
+   "subsequent_rev": 19210.15
+  },
+  {
+   "label": "Decouverte du Bouddhisme (DB)",
+   "code": "DB",
+   "instance": "DB13 (2024-juin-15-01)",
+   "event_date": "2024-06-14",
+   "attendees": 28,
+   "returned": 24,
+   "subsequent_rev": 22841.42
+  },
+  {
+   "label": "Decouverte du Bouddhisme (DB)",
+   "code": "DB",
+   "instance": "DB1 (2024-oct.-12-01)",
+   "event_date": "2024-10-11",
+   "attendees": 40,
+   "returned": 19,
+   "subsequent_rev": 11513.93
+  },
+  {
+   "label": "Decouverte du Bouddhisme (DB)",
+   "code": "DB",
+   "instance": "DB2 (2024-nov.-16-02)",
+   "event_date": "2024-11-15",
+   "attendees": 27,
+   "returned": 16,
+   "subsequent_rev": 8446.24
+  },
+  {
+   "label": "Decouverte du Bouddhisme (DB)",
+   "code": "DB",
+   "instance": "DB3 (2024-déc.-07-01)",
+   "event_date": "2024-12-06",
+   "attendees": 29,
+   "returned": 20,
+   "subsequent_rev": 13036.92
+  },
+  {
+   "label": "Decouverte du Bouddhisme (DB)",
+   "code": "DB",
+   "instance": "DB4 (1089)",
+   "event_date": "2025-03-13",
+   "attendees": 25,
+   "returned": 18,
+   "subsequent_rev": 7824.02
+  },
+  {
+   "label": "Decouverte du Bouddhisme (DB)",
+   "code": "DB",
+   "instance": "DB5 (1090)",
+   "event_date": "2025-04-11",
+   "attendees": 22,
+   "returned": 18,
+   "subsequent_rev": 9447.26
+  },
+  {
+   "label": "Decouverte du Bouddhisme (DB)",
+   "code": "DB",
+   "instance": "DB6 (1091)",
+   "event_date": "2025-05-15",
+   "attendees": 30,
+   "returned": 20,
+   "subsequent_rev": 9693.89
+  },
+  {
+   "label": "Decouverte du Bouddhisme (DB)",
+   "code": "DB",
+   "instance": "DB7 (1092)",
+   "event_date": "2025-06-06",
+   "attendees": 21,
+   "returned": 17,
+   "subsequent_rev": 9377.21
+  },
+  {
+   "label": "Decouverte du Bouddhisme (DB)",
+   "code": "DB",
+   "instance": "DB8 (1231)",
+   "event_date": "2025-10-17",
+   "attendees": 23,
+   "returned": 19,
+   "subsequent_rev": 7915.42
+  },
+  {
+   "label": "Decouverte du Bouddhisme (DB)",
+   "code": "DB",
+   "instance": "DB9 (1257)",
+   "event_date": "2025-11-07",
+   "attendees": 18,
+   "returned": 14,
+   "subsequent_rev": 6270.27
+  },
+  {
+   "label": "Decouverte du Bouddhisme (DB)",
+   "code": "DB",
+   "instance": "DB10 (1258)",
+   "event_date": "2025-11-08",
+   "attendees": 23,
+   "returned": 19,
+   "subsequent_rev": 7062.91
+  },
+  {
+   "label": "Decouverte du Bouddhisme (DB)",
+   "code": "DB",
+   "instance": "DB10 (1332)",
+   "event_date": "2026-03-13",
+   "attendees": 19,
+   "returned": 15,
+   "subsequent_rev": 3953.44
+  },
+  {
+   "label": "Decouverte du Bouddhisme (DB)",
+   "code": "DB",
+   "instance": "DB11 (1333)",
+   "event_date": "2026-04-17",
+   "attendees": 22,
+   "returned": 11,
+   "subsequent_rev": 2675.42
+  },
+  {
+   "label": "Decouverte du Bouddhisme (DB)",
+   "code": "DB",
+   "instance": "DB12 (1334)",
+   "event_date": "2026-05-15",
+   "attendees": 17,
+   "returned": 11,
+   "subsequent_rev": 3614.86
+  },
+  {
+   "label": "Decouverte du Bouddhisme (DB)",
+   "code": "DB",
+   "instance": "DB13 (1335)",
+   "event_date": "2026-06-26",
+   "attendees": 7,
+   "returned": 6,
+   "subsequent_rev": 1799.13
+  },
+  {
+   "label": "PEBA",
+   "code": "PEBA",
+   "instance": "PEBA module 4 (2023-oct.-07-03)",
+   "event_date": "2023-10-05",
+   "attendees": 34,
+   "returned": 29,
+   "subsequent_rev": 25593.55
+  },
+  {
+   "label": "PEBA",
+   "code": "PEBA",
+   "instance": "PEBA module 4 (2023-nov.-04-03)",
+   "event_date": "2023-11-03",
+   "attendees": 32,
+   "returned": 30,
+   "subsequent_rev": 22853.19
+  },
+  {
+   "label": "PEBA",
+   "code": "PEBA",
+   "instance": "PEBA module 4 (2023-déc.-02-01)",
+   "event_date": "2023-11-30",
+   "attendees": 28,
+   "returned": 26,
+   "subsequent_rev": 16803.74
+  },
+  {
+   "label": "PEBA",
+   "code": "PEBA",
+   "instance": "PEBA module 4 (2024-mars-16-01)",
+   "event_date": "2024-03-15",
+   "attendees": 39,
+   "returned": 34,
+   "subsequent_rev": 25599.75
+  },
+  {
+   "label": "PEBA",
+   "code": "PEBA",
+   "instance": "PEBA module 4 (2024-avr.-13-01)",
+   "event_date": "2024-04-11",
+   "attendees": 27,
+   "returned": 23,
+   "subsequent_rev": 17322.61
+  },
+  {
+   "label": "PEBA",
+   "code": "PEBA",
+   "instance": "PEBA module 4 (2024-mai-11-01)",
+   "event_date": "2024-05-10",
+   "attendees": 31,
+   "returned": 28,
+   "subsequent_rev": 14932.98
+  },
+  {
+   "label": "PEBA",
+   "code": "PEBA",
+   "instance": "PEBA module 4 (2024-juin-08-01)",
+   "event_date": "2024-06-07",
+   "attendees": 28,
+   "returned": 24,
+   "subsequent_rev": 18347.22
+  },
+  {
+   "label": "PEBA",
+   "code": "PEBA",
+   "instance": "PEBA (2024-juin-30-01)",
+   "event_date": "2024-06-28",
+   "attendees": 32,
+   "returned": 28,
+   "subsequent_rev": 22042.76
+  },
+  {
+   "label": "PEBA",
+   "code": "PEBA",
+   "instance": "PEBA module 4 (2024-oct.-05-02)",
+   "event_date": "2024-10-04",
+   "attendees": 35,
+   "returned": 31,
+   "subsequent_rev": 19847.06
+  },
+  {
+   "label": "PEBA",
+   "code": "PEBA",
+   "instance": "PEBA module 4 (2024-nov.-09-03)",
+   "event_date": "2024-11-08",
+   "attendees": 32,
+   "returned": 27,
+   "subsequent_rev": 14229.71
+  },
+  {
+   "label": "PEBA",
+   "code": "PEBA",
+   "instance": "PEBA module 4 (2024-nov.-30-01)",
+   "event_date": "2024-11-28",
+   "attendees": 43,
+   "returned": 34,
+   "subsequent_rev": 19723.16
+  },
+  {
+   "label": "PEBA",
+   "code": "PEBA",
+   "instance": "PEBA module 4 (1093)",
+   "event_date": "2025-02-27",
+   "attendees": 40,
+   "returned": 34,
+   "subsequent_rev": 17408.49
+  },
+  {
+   "label": "PEBA",
+   "code": "PEBA",
+   "instance": "PEBA module 4 (1094)",
+   "event_date": "2025-03-28",
+   "attendees": 37,
+   "returned": 28,
+   "subsequent_rev": 13075.51
+  },
+  {
+   "label": "PEBA",
+   "code": "PEBA",
+   "instance": "PEBA module 4 (1095)",
+   "event_date": "2025-04-30",
+   "attendees": 33,
+   "returned": 22,
+   "subsequent_rev": 10986.21
+  },
+  {
+   "label": "PEBA",
+   "code": "PEBA",
+   "instance": "PEBA module 4 (1096)",
+   "event_date": "2025-05-30",
+   "attendees": 29,
+   "returned": 23,
+   "subsequent_rev": 9033.48
+  },
+  {
+   "label": "PEBA",
+   "code": "PEBA",
+   "instance": "PEBA (1097)",
+   "event_date": "2025-07-10",
+   "attendees": 32,
+   "returned": 22,
+   "subsequent_rev": 8620.22
+  },
+  {
+   "label": "PEBA",
+   "code": "PEBA",
+   "instance": "PEBA module 5 (1237)",
+   "event_date": "2025-10-03",
+   "attendees": 45,
+   "returned": 35,
+   "subsequent_rev": 13114.0
+  },
+  {
+   "label": "PEBA",
+   "code": "PEBA",
+   "instance": "PEBA module 5 (1238)",
+   "event_date": "2025-10-31",
+   "attendees": 37,
+   "returned": 28,
+   "subsequent_rev": 13173.54
+  },
+  {
+   "label": "PEBA",
+   "code": "PEBA",
+   "instance": "PEBA module 5 (1259)",
+   "event_date": "2025-11-26",
+   "attendees": 29,
+   "returned": 20,
+   "subsequent_rev": 11396.3
+  },
+  {
+   "label": "PEBA",
+   "code": "PEBA",
+   "instance": "PEBA module 5 (1336)",
+   "event_date": "2026-03-06",
+   "attendees": 52,
+   "returned": 35,
+   "subsequent_rev": 10080.01
+  },
+  {
+   "label": "PEBA",
+   "code": "PEBA",
+   "instance": "PEBA module 5 (1339)",
+   "event_date": "2026-04-10",
+   "attendees": 30,
+   "returned": 20,
+   "subsequent_rev": 4916.28
+  },
+  {
+   "label": "PEBA",
+   "code": "PEBA",
+   "instance": "PEBA module 5 (1337)",
+   "event_date": "2026-05-07",
+   "attendees": 36,
+   "returned": 23,
+   "subsequent_rev": 5234.13
+  },
+  {
+   "label": "PEBA",
+   "code": "PEBA",
+   "instance": "PEBA module 5 (1338)",
+   "event_date": "2026-06-05",
+   "attendees": 23,
+   "returned": 17,
+   "subsequent_rev": 2454.49
+  },
+  {
+   "label": "PEBA",
+   "code": "PEBA",
+   "instance": "PEBA module 5 (1340)",
+   "event_date": "2026-07-04",
+   "attendees": 37,
+   "returned": 16,
+   "subsequent_rev": 3153.3
+  },
+  {
+   "label": "16 Attitudes",
+   "code": "16A",
+   "instance": "16A (2023-oct.-14-05)",
+   "event_date": "2023-10-14",
+   "attendees": 2,
+   "returned": 1,
+   "subsequent_rev": 98.5
+  },
+  {
+   "label": "16 Attitudes",
+   "code": "16A",
+   "instance": "Bienveillance et 16A (2024-avr.-20-04)",
+   "event_date": "2024-04-19",
+   "attendees": 13,
+   "returned": 4,
+   "subsequent_rev": 870.15
+  },
+  {
+   "label": "16 Attitudes",
+   "code": "16A",
+   "instance": "16A (2024-juin-15-02)",
+   "event_date": "2024-06-15",
+   "attendees": 6,
+   "returned": 0,
+   "subsequent_rev": 0.0
+  },
+  {
+   "label": "16 Attitudes",
+   "code": "16A",
+   "instance": "Sens et 16A (2024-juil.-27-02)",
+   "event_date": "2024-07-27",
+   "attendees": 9,
+   "returned": 4,
+   "subsequent_rev": 2366.47
+  },
+  {
+   "label": "16 Attitudes",
+   "code": "16A",
+   "instance": "16A (2024-oct.-12-05)",
+   "event_date": "2024-10-11",
+   "attendees": 9,
+   "returned": 5,
+   "subsequent_rev": 3421.96
+  },
+  {
+   "label": "16 Attitudes",
+   "code": "16A",
+   "instance": "16A (1166)",
+   "event_date": "2025-03-14",
+   "attendees": 15,
+   "returned": 10,
+   "subsequent_rev": 6439.04
+  },
+  {
+   "label": "16 Attitudes",
+   "code": "16A",
+   "instance": "16A NIV2 (1161)",
+   "event_date": "2025-06-18",
+   "attendees": 16,
+   "returned": 12,
+   "subsequent_rev": 3933.88
+  },
+  {
+   "label": "16 Attitudes",
+   "code": "16A",
+   "instance": "16A (1262)",
+   "event_date": "2025-11-21",
+   "attendees": 12,
+   "returned": 4,
+   "subsequent_rev": 554.84
+  },
+  {
+   "label": "16 Attitudes",
+   "code": "16A",
+   "instance": "16A (1366)",
+   "event_date": "2026-03-13",
+   "attendees": 9,
+   "returned": 4,
+   "subsequent_rev": 488.0
+  },
+  {
+   "label": "16 Attitudes",
+   "code": "16A",
+   "instance": "16A (1378)",
+   "event_date": "2026-05-22",
+   "attendees": 11,
+   "returned": 2,
+   "subsequent_rev": 84.21
   }
  ]
 }
