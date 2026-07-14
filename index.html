@@ -114,8 +114,8 @@ tr:hover{background:#f5f8f5}
 <div class="section">
   <div class="num">Constat 2</div>
   <h2>CI+ : qui paie quoi aujourd'hui ?</h2>
-  <p>Les tarifs CI+ varient selon le niveau de membre : 66 €/nuit pour les non-membres, 55 € pour les membres adherents et bienfaiteurs. Voici le detail des sejours factures sur les deux dernieres saisons :</p>
-  <table id="t-tiers"><thead><tr><th>Tarif</th><th class="n">Reserv.</th><th class="n">Nuits</th><th class="n">Tarif/nuit</th><th class="n">Revenu</th></tr></thead><tbody></tbody></table>
+  <p>Les tarifs CI+ varient selon le niveau de membre : 66 €/nuit pour les non-membres, 55 € pour les membres adherents et bienfaiteurs. Voici le detail par saison :</p>
+  <table id="t-tiers"><thead><tr><th>Saison</th><th>Tarif</th><th class="n">Reserv.</th><th class="n">Nuits</th><th class="n">Tarif/nuit</th><th class="n">Revenu</th></tr></thead><tbody></tbody></table>
   <div class="callout amber" id="tiers-insight"></div>
 </div>
 
@@ -123,9 +123,9 @@ tr:hover{background:#f5f8f5}
 <div class="section">
   <div class="num">Constat 3</div>
   <h2>Ou sont les nuits vides ?</h2>
-  <p>Les chambres CI+ ne sont pas le seul levier d'hebergement. Les Chambres a 2 et les Dortoirs representent la plus grande reserve de nuits disponibles.</p>
-  <div class="chart-box" style="height:320px"><canvas id="c-rooms"></canvas></div>
-  <div class="callout green"><strong>Remplir 10 % des nuits vides en Chambre a 2 et Dortoir genere ~11 700 €</strong> — bien plus que toute hausse CI+. L'hebergement le plus accessible est celui qui a le plus de potentiel.</div>
+  <p>Les chambres CI+ ne sont pas le seul levier d'hebergement. Voici l'occupation reelle par type de chambre et par saison (capacite = nombre de lits x 365 jours) :</p>
+  <table id="t-rooms"><thead><tr><th>Type</th><th>Saison</th><th class="n">Lits</th><th class="n">Capacite</th><th class="n">Nuits reservees</th><th class="n">Occupation</th><th class="n">Revenus</th><th class="n">€/nuit moy.</th></tr></thead><tbody></tbody></table>
+  <div class="callout green"><strong>Les Chambres a 2 et Dortoirs totalisent des milliers de nuits vides chaque saison.</strong> Remplir 10 % de ces nuits vacantes genere bien plus que toute hausse de tarif CI+. L'hebergement le plus accessible est celui qui a le plus de potentiel.</div>
 </div>
 
 <!-- S4: Retention -->
@@ -248,6 +248,17 @@ tr:hover{background:#f5f8f5}
     </div>
     <p>Un taux de retour de <strong>64 %</strong> contre ~30 % en moyenne pour le centre. Certains enseignants construisent une communaute fidele — c'est ce modele qu'il faut reproduire.</p>
   </div>
+
+  <div class="case">
+    <h4>Journee portes ouvertes : la porte d'entree qui fonctionne</h4>
+    <table id="t-jpo"><thead><tr><th>Saison</th><th class="n">Participants</th><th class="n">Nouveaux</th><th class="n">Deja connus</th><th class="n">% nouveaux</th></tr></thead><tbody></tbody></table>
+    <div class="kpi-row">
+      <div class="kpi"><div class="v pos" id="v-jpo-conv"></div><div class="l">ont reserve autre chose ensuite</div></div>
+      <div class="kpi"><div class="v" id="v-jpo-pct"></div><div class="l">taux de conversion</div></div>
+      <div class="kpi"><div class="v" id="v-jpo-rev"></div><div class="l">revenus generes ensuite</div></div>
+    </div>
+    <p>La JPO attire surtout des <strong>nouveaux</strong> (71 % en 25-26). Avec un taux de conversion de 35 %, c'est l'un des meilleurs entonnoirs de l'Institut. La question : que faire des visiteurs qui ne sont pas revenus ?</p>
+  </div>
 </div>
 
 <!-- S9: Online -->
@@ -325,26 +336,29 @@ function upSim(){const dp=+ps.value,dn=+ns.value;
   document.getElementById('sim-vn').textContent=FE(dn*66);}
 ps.oninput=upSim;ns.oninput=upSim;upSim();
 
-// S2: CI+ tiers factual — 55/night for members is correct policy
+// S2: CI+ tiers per season
 const tiers=S.ciplusAllTiers||[];
-document.querySelector('#t-tiers tbody').innerHTML=tiers.map(r=>{
+const tierSeasons=[...new Set(tiers.map(r=>r.season))];
+document.querySelector('#t-tiers tbody').innerHTML=tiers.map((r,i)=>{
   const short=r.tier.split('/')[0].trim().replace('Membre (adhérent/soutien) ','Membre adherent').replace('Membre Bienfaiteur ','Bienfaiteur');
-  return `<tr><td>${short}</td><td class="n">${F(r.bookings)}</td><td class="n">${F(r.nights)}</td><td class="n">${FE(r.actual_rate)}</td><td class="n">${FE(r.actual_rev)}</td></tr>`;
-}).join('')+`<tr style="font-weight:700;background:#f8f9fa"><td>Total</td><td class="n">${F(tiers.reduce((s,r)=>s+r.bookings,0))}</td><td class="n">${F(tiers.reduce((s,r)=>s+r.nights,0))}</td><td></td><td class="n">${FE(tiers.reduce((s,r)=>s+r.actual_rev,0))}</td></tr>`;
+  const si=tierSeasons.indexOf(r.season);
+  return `<tr class="${si%2===0?'season-a':''}"><td>${r.season}</td><td>${short}</td><td class="n">${F(r.bookings)}</td><td class="n">${F(r.nights)}</td><td class="n">${FE(r.actual_rate)}</td><td class="n">${FE(r.actual_rev)}</td></tr>`;
+}).join('');
 const totalCIplusRev=tiers.reduce((s,r)=>s+r.actual_rev,0);
 const totalCIplusNights=tiers.reduce((s,r)=>s+r.nights,0);
-document.getElementById('tiers-insight').innerHTML=`Les chambres CI+ ont genere <strong>${FE(totalCIplusRev)}</strong> sur ${F(totalCIplusNights)} nuits payees au cours des deux dernieres saisons. Le tarif membre (55 €/nuit) et le tarif non-membre (66 €/nuit) s'appliquent conformement a la grille tarifaire. Si le Conseil envisage une hausse de ces tarifs, il est utile de noter que <strong>les membres representent la majorite des nuits CI+</strong> (${F(tiers.filter(r=>r.tier.includes('Membre')||r.tier.includes('Bienfaiteur')).reduce((s,r)=>s+r.nights,0))} nuits sur ${F(totalCIplusNights)}) — ce sont les participants les plus engages de l'Institut.`;
+const memNights=tiers.filter(r=>r.tier.includes('Membre')||r.tier.includes('Bienfaiteur')).reduce((s,r)=>s+r.nights,0);
+document.getElementById('tiers-insight').innerHTML=`Les chambres CI+ ont genere <strong>${FE(totalCIplusRev)}</strong> sur ${F(totalCIplusNights)} nuits payees au cours des deux dernieres saisons. Les <strong>membres representent ${F(memNights)} nuits sur ${F(totalCIplusNights)}</strong> (${Math.round(memNights/totalCIplusNights*100)} %) — ce sont les participants les plus engages de l'Institut. Si le Conseil envisage une hausse, il est important de mesurer l'impact sur la frequentation de ces participants fideles.`;
 
-// S3: Room occupancy
+// S3: Room occupancy per season
 const rooms=S.roomOccupancy||[];
-const roomCap={'Dortoir':8760,'Chambre à 2 pers.':6570,'Chambre à 3 ou 4 pers.':5840,'Chambre individuelle':730,'Chambre individuelle +':1460,'Camping':2000,'Camping-car':1000,'Caravane':500};
-const rTypes=['Dortoir','Chambre à 2 pers.','Chambre à 3 ou 4 pers.','Chambre individuelle +','Chambre individuelle','Camping'];
-const rFilled=rTypes.map(t=>rooms.filter(r=>r.room_type===t).reduce((s,r)=>s+r.nights,0));
-const rEmpty=rTypes.map((t,i)=>(roomCap[t]||5000)-rFilled[i]);
-DC('rooms');CX.rooms=new Chart(document.getElementById('c-rooms'),{type:'bar',data:{labels:rTypes.map(t=>t.replace('Chambre ','Ch. ').replace('individuelle','indiv.').replace('pers.','p.')),datasets:[
-  {label:'Nuits reservees (24-25 + 25-26)',data:rFilled,backgroundColor:'#4a6741'},
-  {label:'Nuits vides',data:rEmpty,backgroundColor:'#e9ecef'}
-]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,scales:{x:{stacked:true}},plugins:{legend:{position:'bottom'}}}});
+const roomSeasons=[...new Set(rooms.map(r=>r.season))];
+const roomOrder=['Dortoir','Chambre à 2 pers.','Chambre à 3 ou 4 pers.','Chambre individuelle +','Chambre individuelle','Camping','Camping-car','Caravane'];
+const sortedRooms=[...rooms].sort((a,b)=>{const ai=roomOrder.indexOf(a.room_type),bi=roomOrder.indexOf(b.room_type);return ai!==bi?(ai<0?99:ai)-(bi<0?99:bi):a.season.localeCompare(b.season);});
+document.querySelector('#t-rooms tbody').innerHTML=sortedRooms.map((r,i)=>{
+  const occCls=r.occupancy_pct>80?'pos':r.occupancy_pct<30?'neg':'';
+  const si=roomSeasons.indexOf(r.season);
+  return `<tr class="${si%2===0?'season-a':''}"><td>${r.room_type}</td><td>${r.season}</td><td class="n">${F(r.beds)}</td><td class="n">${F(r.capacity)}</td><td class="n">${F(r.nights)}</td><td class="n ${occCls}">${FP(r.occupancy_pct)}</td><td class="n">${FE(r.lodg_rev)}</td><td class="n">${FE(r.avg_night)}</td></tr>`;
+}).join('');
 
 // S4: Per-season one-timer YoY
 const freq=S.frequencyRevenue||[];
@@ -472,6 +486,17 @@ const nel=(S.caseNelson||[])[0]||{};
 document.getElementById('v-nel-ret').textContent=F(nel.returned_2425||0);
 document.getElementById('v-nel-pct').textContent='64 %';
 document.getElementById('v-nel-new').textContent=F(nel.new_2425||0);
+
+// JPO case study
+const jpo=S.caseJPO||[];
+document.querySelector('#t-jpo tbody').innerHTML=jpo.map(r=>{
+  const pct=r.total?Math.round(r.brand_new/r.total*100):0;
+  return `<tr><td>${r.season}</td><td class="n">${F(r.total)}</td><td class="n">${F(r.brand_new)}</td><td class="n">${F(r.already_known)}</td><td class="n">${pct} %</td></tr>`;
+}).join('');
+const jpoC=(S.caseJPOConversion||[])[0]||{};
+document.getElementById('v-jpo-conv').textContent=F(jpoC.converted||0);
+document.getElementById('v-jpo-pct').textContent=FP(jpoC.pct||0);
+document.getElementById('v-jpo-rev').textContent=FE(jpoC.subsequent_rev||0);
 
 // Online
 const onl=S.onlineRevenue||[];

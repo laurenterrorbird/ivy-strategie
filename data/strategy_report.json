@@ -100,164 +100,164 @@
  ],
  "roomOccupancy": [
   {
-   "room_type": "NULL",
-   "season": "24-25",
-   "bookings": 21,
-   "nights": 838,
-   "lodg_rev": 4760.9,
-   "avg_night": 12.14
-  },
-  {
-   "room_type": "NULL",
-   "season": "25-26",
-   "bookings": 16,
-   "nights": 254,
-   "lodg_rev": 4455.26,
-   "avg_night": 19.43
-  },
-  {
    "room_type": "Camping",
    "season": "24-25",
-   "bookings": 162,
+   "beds": 40,
+   "capacity": 14600,
    "nights": 796,
+   "occupancy_pct": 5.5,
    "lodg_rev": 3998.2,
-   "avg_night": 5.12
+   "avg_night": 5.18
   },
   {
    "room_type": "Camping",
    "season": "25-26",
-   "bookings": 133,
+   "beds": 40,
+   "capacity": 14600,
    "nights": 817,
+   "occupancy_pct": 5.6,
    "lodg_rev": 4100.14,
-   "avg_night": 5.53
+   "avg_night": 5.66
   },
   {
    "room_type": "Camping-car",
    "season": "24-25",
-   "bookings": 56,
+   "beds": 15,
+   "capacity": 5475,
    "nights": 278,
+   "occupancy_pct": 5.1,
    "lodg_rev": 1485.65,
-   "avg_night": 5.72
+   "avg_night": 5.94
   },
   {
    "room_type": "Camping-car",
    "season": "25-26",
-   "bookings": 64,
+   "beds": 15,
+   "capacity": 5475,
    "nights": 293,
+   "occupancy_pct": 5.4,
    "lodg_rev": 1579.35,
    "avg_night": 5.51
   },
   {
    "room_type": "Caravane",
    "season": "24-25",
-   "bookings": 5,
+   "beds": 7,
+   "capacity": 2555,
    "nights": 27,
+   "occupancy_pct": 1.1,
    "lodg_rev": 315.0,
-   "avg_night": 14.28
+   "avg_night": 17.85
   },
   {
    "room_type": "Caravane",
    "season": "25-26",
-   "bookings": 5,
+   "beds": 7,
+   "capacity": 2555,
    "nights": 22,
+   "occupancy_pct": 0.9,
    "lodg_rev": 164.64,
-   "avg_night": 7.06
+   "avg_night": 11.76
   },
   {
    "room_type": "Chambre à 2 pers.",
    "season": "24-25",
-   "bookings": 466,
+   "beds": 23,
+   "capacity": 8395,
    "nights": 2306,
+   "occupancy_pct": 27.5,
    "lodg_rev": 39971.7,
-   "avg_night": 20.33
+   "avg_night": 21.15
   },
   {
    "room_type": "Chambre à 2 pers.",
    "season": "25-26",
-   "bookings": 348,
+   "beds": 23,
+   "capacity": 8395,
    "nights": 1596,
+   "occupancy_pct": 19.0,
    "lodg_rev": 33610.99,
-   "avg_night": 22.5
+   "avg_night": 22.9
   },
   {
    "room_type": "Chambre à 3 ou 4 pers.",
    "season": "24-25",
-   "bookings": 209,
+   "beds": 15,
+   "capacity": 5475,
    "nights": 983,
+   "occupancy_pct": 18.0,
    "lodg_rev": 14269.92,
-   "avg_night": 16.87
+   "avg_night": 17.03
   },
   {
    "room_type": "Chambre à 3 ou 4 pers.",
    "season": "25-26",
-   "bookings": 180,
+   "beds": 15,
+   "capacity": 5475,
    "nights": 991,
+   "occupancy_pct": 18.1,
    "lodg_rev": 14966.86,
-   "avg_night": 17.85
+   "avg_night": 18.05
   },
   {
    "room_type": "Chambre individuelle",
    "season": "24-25",
-   "bookings": 140,
+   "beds": 2,
+   "capacity": 730,
    "nights": 812,
+   "occupancy_pct": 111.2,
    "lodg_rev": 25071.26,
-   "avg_night": 34.23
+   "avg_night": 47.93
   },
   {
    "room_type": "Chambre individuelle",
    "season": "25-26",
-   "bookings": 144,
+   "beds": 2,
+   "capacity": 730,
    "nights": 806,
+   "occupancy_pct": 110.4,
    "lodg_rev": 22692.61,
-   "avg_night": 34.14
+   "avg_night": 49.16
   },
   {
    "room_type": "Chambre individuelle +",
    "season": "24-25",
-   "bookings": 36,
+   "beds": 4,
+   "capacity": 1460,
    "nights": 155,
+   "occupancy_pct": 10.6,
    "lodg_rev": 8080.6,
-   "avg_night": 56.47
+   "avg_night": 59.79
   },
   {
    "room_type": "Chambre individuelle +",
    "season": "25-26",
-   "bookings": 63,
+   "beds": 4,
+   "capacity": 1460,
    "nights": 380,
+   "occupancy_pct": 26.0,
    "lodg_rev": 20523.2,
-   "avg_night": 54.83
+   "avg_night": 57.58
   },
   {
    "room_type": "Dortoir",
    "season": "24-25",
-   "bookings": 579,
+   "beds": 26,
+   "capacity": 9490,
    "nights": 2963,
+   "occupancy_pct": 31.2,
    "lodg_rev": 22312.35,
-   "avg_night": 8.65
+   "avg_night": 8.76
   },
   {
    "room_type": "Dortoir",
    "season": "25-26",
-   "bookings": 487,
+   "beds": 26,
+   "capacity": 9490,
    "nights": 2837,
+   "occupancy_pct": 29.9,
    "lodg_rev": 25422.13,
-   "avg_night": 9.26
-  },
-  {
-   "room_type": "Logement résident",
-   "season": "24-25",
-   "bookings": 5,
-   "nights": 23,
-   "lodg_rev": 0.0,
-   "avg_night": 0.0
-  },
-  {
-   "room_type": "Logement résident",
-   "season": "25-26",
-   "bookings": 1,
-   "nights": 12,
-   "lodg_rev": 0.0,
-   "avg_night": 0.0
+   "avg_night": 9.28
   }
  ],
  "onlineRevenue": [
@@ -3858,7 +3858,25 @@
  ],
  "retentionYoY": [
   {
-   "Incorrect syntax near the keyword 'WITH'.": "Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon."
+   "season": "23-24",
+   "new_guests": 778,
+   "returned": 381,
+   "never_returned": 397,
+   "retention_pct": 49.0
+  },
+  {
+   "season": "24-25",
+   "new_guests": 632,
+   "returned": 186,
+   "never_returned": 446,
+   "retention_pct": 29.4
+  },
+  {
+   "season": "25-26",
+   "new_guests": 534,
+   "returned": 79,
+   "never_returned": 455,
+   "retention_pct": 14.8
   }
  ],
  "frequencyRevenue": [
@@ -4113,56 +4131,74 @@
  "ciplusAllTiers": [
   {
    "tier": "Membre (adhérent/soutien) / Member (Basic/Support)",
-   "bookings": 46,
-   "nights": 238,
-   "actual_rev": 13074.6,
-   "rev_at_66": 15708.0,
-   "difference": 2633.4,
-   "actual_rate": 54.95
+   "season": "24-25",
+   "bookings": 16,
+   "nights": 71,
+   "actual_rev": 3889.6,
+   "actual_rate": 54.86
   },
   {
    "tier": "Non Membre / Non Member",
-   "bookings": 38,
-   "nights": 157,
-   "actual_rev": 10362.0,
-   "rev_at_66": 10362.0,
-   "difference": 0.0,
+   "season": "24-25",
+   "bookings": 15,
+   "nights": 36,
+   "actual_rev": 2376.0,
    "actual_rate": 66.0
   },
   {
    "tier": "Membre Bienfaiteur / Member Benefactor",
-   "bookings": 9,
-   "nights": 104,
-   "actual_rev": 5720.0,
-   "rev_at_66": 6864.0,
-   "difference": 1144.0,
+   "season": "24-25",
+   "bookings": 3,
+   "nights": 33,
+   "actual_rev": 1815.0,
+   "actual_rate": 55.0
+  },
+  {
+   "tier": "Membre (adhérent/soutien) / Member (Basic/Support)",
+   "season": "25-26",
+   "bookings": 30,
+   "nights": 167,
+   "actual_rev": 9185.0,
+   "actual_rate": 55.0
+  },
+  {
+   "tier": "Non Membre / Non Member",
+   "season": "25-26",
+   "bookings": 21,
+   "nights": 103,
+   "actual_rev": 6798.0,
+   "actual_rate": 66.0
+  },
+  {
+   "tier": "Membre Bienfaiteur / Member Benefactor",
+   "season": "25-26",
+   "bookings": 5,
+   "nights": 50,
+   "actual_rev": 2750.0,
    "actual_rate": 55.0
   },
   {
    "tier": "Tarif général / Regular Price",
+   "season": "25-26",
    "bookings": 1,
    "nights": 30,
    "actual_rev": 1286.7,
-   "rev_at_66": 1980.0,
-   "difference": 693.3,
    "actual_rate": 42.89
   },
   {
    "tier": "Sangha ordonnée / Ordained Sangha",
+   "season": "25-26",
    "bookings": 2,
    "nights": 10,
    "actual_rev": 275.0,
-   "rev_at_66": 660.0,
-   "difference": 385.0,
    "actual_rate": 27.5
   },
   {
    "tier": "Spécial -30%",
+   "season": "25-26",
    "bookings": 1,
    "nights": 5,
    "actual_rev": 228.5,
-   "rev_at_66": 330.0,
-   "difference": 101.5,
    "actual_rate": 45.7
   }
  ],
@@ -4670,6 +4706,29 @@
    "people": 77,
    "rev": 44071.45,
    "avg_pp": 572.36
+  }
+ ],
+ "caseJPO": [
+  {
+   "season": "23-24",
+   "total": 9,
+   "brand_new": 7,
+   "already_known": 2
+  },
+  {
+   "season": "25-26",
+   "total": 95,
+   "brand_new": 67,
+   "already_known": 28
+  }
+ ],
+ "caseJPOConversion": [
+  {
+   "total": 104,
+   "converted": 36,
+   "jpo_only": 68,
+   "pct": 34.6,
+   "subsequent_rev": 14819.63
   }
  ]
 }
